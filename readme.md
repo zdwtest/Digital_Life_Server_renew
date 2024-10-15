@@ -3,7 +3,10 @@
 For other part of the project, please refer to:  
 [Launcher](https://github.com/CzJam/DL_Launcher) 启动此服务器的图形界面。  
 [UE Client](https://github.com/QSWWLTN/DigitalLife) 用于渲染人物动画，录音，和播放声音的前端部分。    
-详细的配置流程可参见[readme_detail.md](readme_detail.md)
+详细的配置流程可参见[readme_detail.md](readme_detail.md)。
+# 再次更新说明
+修改大语言模型，希望加入中转api和google的gemini 1.5Pro和1.5flash  
+
 ## Getting stuffs ready to roll:
 ### Clone this repo
 ```bash
