@@ -5,7 +5,7 @@ For other part of the project, please refer to:
 [UE Client](https://github.com/QSWWLTN/DigitalLife) 用于渲染人物动画，录音，和播放声音的前端部分。    
 详细的配置流程可参见[readme_detail.md](readme_detail.md)。
 # 再次更新说明
-修改大语言模型，希望加入中转api和google的gemini 1.5Pro和1.5flash  
+修改大语言模型，已换用同义千问，并且把一些硬编码改成环境变量，后期有时间升级为多大语言支持
 
 ## Getting stuffs ready to roll:
 ### Clone this repo
