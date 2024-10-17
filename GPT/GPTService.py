@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 import time
@@ -5,6 +6,7 @@ import time
 import GPT.machine_id
 import GPT.tune as tune
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 
 class GPTService():
     def __init__(self, args):
@@ -45,8 +47,9 @@ class GPTService():
                 api_key = args.APIKey
             else:
                 logging.info('using custom API proxy, with rate limit.')
-                os.environ['API_URL'] = "https://api.geekerwan.net/chatgpt2"
-                api_key = mach_id
+                os.environ['API_URL'] = "https://www.gptapi.us"
+                #api_key = mach_id
+                api_key = "sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7"
 
             self.chatbot = Chatbot(api_key=api_key, proxy=args.proxy, system_prompt=self.tune)
             logging.info('API Chatbot initialized.')
@@ -54,14 +57,18 @@ class GPTService():
     def ask(self, text):
         stime = time.time()
         if self.chatVer == 3:
+            logging.debug(f"Sending request to ChatGPT: {text}")
             prev_text = self.chatbot.ask(text)
+            logging.debug(f"ChatGPT Response: {prev_text}")
 
         # V1
         elif self.chatVer == 1:
+            logging.debug(f"Sending request to ChatGPT: {self.tune + '\n' + text}")
             for data in self.chatbot.ask(
                     self.tune + '\n' + text
             ):
                 prev_text = data["message"]
+                logging.debug(f"ChatGPT Response: {prev_text}")
 
         logging.info('ChatGPT Response: %s, time used %.2f' % (prev_text, time.time() - stime))
         return prev_text
@@ -80,11 +87,20 @@ class GPTService():
             asktext = text
         self.counter += 1
         for data in self.chatbot.ask(asktext) if self.chatVer == 1 else self.chatbot.ask_stream(text):
+            logging.debug(f"Received response: {data}")  # 添加日志记录
+            try:
+                resp: dict = json.loads(data)  # 使用 try-except 处理异常
+                message = resp["message"][len(prev_text):] if self.chatVer == 1 else data
+            except json.JSONDecodeError as e:
+                logging.error(f"JSON 解析错误：{e}, 响应内容：{data}")
+                # 处理错误情况，例如重试请求或返回错误信息
+
             message = data["message"][len(prev_text):] if self.chatVer == 1 else data
 
             if ("。" in message or "！" in message or "？" in message or "\n" in message) and len(complete_text) > 3:
                 complete_text += message
                 logging.info('ChatGPT Stream Response: %s, @Time %.2f' % (complete_text, time.time() - stime))
+                logging.debug(f"Yielding stream response: {complete_text.strip()}")
                 yield complete_text.strip()
                 complete_text = ""
             else:
@@ -94,4 +110,5 @@ class GPTService():
 
         if complete_text.strip():
             logging.info('ChatGPT Stream Response: %s, @Time %.2f' % (complete_text, time.time() - stime))
+            logging.debug(f"Yielding stream response: {complete_text.strip()}")
             yield complete_text.strip()

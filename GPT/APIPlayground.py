@@ -2,8 +2,8 @@ from revChatGPT.V3 import Chatbot
 import os
 
 
-os.environ['API_URL'] = "http://api2.geekerwan.net/"
-chatbot = Chatbot(api_key="hahaha")
+os.environ['API_URL'] = "https://www.gptapi.us"
+chatbot = Chatbot(api_key="sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7")
 print("Chatbot: ")
 prev_text = ""
 complete_text = ""
