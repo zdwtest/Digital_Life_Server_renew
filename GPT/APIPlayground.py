@@ -1,9 +1,12 @@
 from revChatGPT.V3 import Chatbot
 import os
 
+api_key = os.getenv("DASHSCOPE_API_KEY")
+base_url = os.getenv("DASHSCOPE_API_BASE")
 
-os.environ['API_URL'] = "https://www.gptapi.us"
-chatbot = Chatbot(api_key="sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7")
+os.environ['API_URL'] = base_url
+chatbot = Chatbot(api_key)
+
 print("Chatbot: ")
 prev_text = ""
 complete_text = ""

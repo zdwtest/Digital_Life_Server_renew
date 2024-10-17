@@ -3,112 +3,77 @@ import logging
 import os
 import time
 
+import openai  # 确保安装：pip install openai
+
+# 假设这些模块在正确的路径下
 import GPT.machine_id
 import GPT.tune as tune
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+# 配置日志记录，格式更易读
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s')
 
-class GPTService():
+class GPTService:
     def __init__(self, args):
-        logging.info('Initializing ChatGPT Service...')
-        self.chatVer = args.chatVer
+        logging.info('正在初始化通义千问服务...')
+        self.tune = tune.get_tune(args.character, args.model)  # 获取个性化设置
+        #self.brainwash = args.brainwash  #  开启洗脑模式
 
-        self.tune = tune.get_tune(args.character, args.model)
+        # 改进的 API 密钥和基础 URL 处理
+        api_key = args.APIKey or os.getenv("DASHSCOPE_API_KEY")  # 优先使用命令行参数，否则使用环境变量
+        base_url = args.baseUrl or os.getenv("DASHSCOPE_API_BASE") # 优先使用命令行参数，否则使用环境变量
 
-        self.counter = 0
+        if not api_key:
+            logging.error("API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。")
+            raise ValueError("API 密钥未找到。")
 
-        self.brainwash = args.brainwash
+        openai.api_key = api_key  # 设置 API 密钥
+        openai.api_base = base_url or "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 设置 API 基础 URL，优先使用自定义的，否则使用默认的
 
-        if self.chatVer == 1:
-            from revChatGPT.V1 import Chatbot
-            config = {}
-            if args.accessToken:
-                logging.info('Try to login with access token.')
-                config['access_token'] = args.accessToken
+        # 记录正在使用的 URL
+        logging.info(f"正在使用 OpenAI API 基础 URL：{openai.api_base}")
+        if base_url:
+            logging.info("基础 URL 来自命令行参数或环境变量。")
+        else:
+            logging.info("正在使用默认基础 URL。")
 
-            else:
-                logging.info('Try to login with email and password.')
-                config['email'] = args.email
-                config['password'] = args.password
-            config['paid'] = args.paid
-            config['model'] = args.model
-            if type(args.proxy) == str:
-                config['proxy'] = args.proxy
-
-            self.chatbot = Chatbot(config=config)
-            logging.info('WEB Chatbot initialized.')
-
-
-        elif self.chatVer == 3:
-            mach_id = GPT.machine_id.get_machine_unique_identifier()
-            from revChatGPT.V3 import Chatbot
-            if args.APIKey:
-                logging.info('you have your own api key. Great.')
-                api_key = args.APIKey
-            else:
-                logging.info('using custom API proxy, with rate limit.')
-                os.environ['API_URL'] = "https://www.gptapi.us"
-                #api_key = mach_id
-                api_key = "sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7"
-
-            self.chatbot = Chatbot(api_key=api_key, proxy=args.proxy, system_prompt=self.tune)
-            logging.info('API Chatbot initialized.')
+        logging.info('通义千问 API 机器人已初始化。')
 
     def ask(self, text):
-        stime = time.time()
-        if self.chatVer == 3:
-            logging.debug(f"Sending request to ChatGPT: {text}")
-            prev_text = self.chatbot.ask(text)
-            logging.debug(f"ChatGPT Response: {prev_text}")
-
-        # V1
-        elif self.chatVer == 1:
-            logging.debug(f"Sending request to ChatGPT: {self.tune + '\n' + text}")
-            for data in self.chatbot.ask(
-                    self.tune + '\n' + text
-            ):
-                prev_text = data["message"]
-                logging.debug(f"ChatGPT Response: {prev_text}")
-
-        logging.info('ChatGPT Response: %s, time used %.2f' % (prev_text, time.time() - stime))
-        return prev_text
+        stime = time.time()  # 记录开始时间
+        try:
+            logging.debug(f'正在向通义千问发送请求：{self.tune + "\n" + text}')  # 日志记录请求内容
+            completion = openai.ChatCompletion.create(
+                model="qwen-max",  # 指定模型
+                messages=[{'role': 'system', 'content': self.tune},  # 系统指令
+                          {'role': 'user', 'content': text}],  # 用户输入
+                stream=False  # 非流式响应
+            )
+            response = completion.choices[0].message.content  # 获取响应内容
+            logging.info('通义千问响应：%s，耗时 %.2f 秒' % (response, time.time() - stime))  # 日志记录响应和耗时
+            return response  # 返回响应
+        except openai.error.OpenAIError as e:
+            logging.error(f'通义千问 API 错误：{e}')  # 日志记录 API 错误
+            return f"错误：通义千问 API 请求失败: {e}"  # 返回错误信息
+        except Exception as e:
+            logging.exception(f'未知错误: {e}')  # 日志记录其他异常
+            return "错误：发生未知错误。"  # 返回错误信息
 
     def ask_stream(self, text):
-        prev_text = ""
-        complete_text = ""
-        stime = time.time()
-        if self.counter % 5 == 0 and self.chatVer == 1:
-            if self.brainwash:
-                logging.info('Brainwash mode activated, reinforce the tune.')
-            else:
-                logging.info('Injecting tunes')
-            asktext = self.tune + '\n' + text
-        else:
-            asktext = text
-        self.counter += 1
-        for data in self.chatbot.ask(asktext) if self.chatVer == 1 else self.chatbot.ask_stream(text):
-            logging.debug(f"Received response: {data}")  # 添加日志记录
-            try:
-                resp: dict = json.loads(data)  # 使用 try-except 处理异常
-                message = resp["message"][len(prev_text):] if self.chatVer == 1 else data
-            except json.JSONDecodeError as e:
-                logging.error(f"JSON 解析错误：{e}, 响应内容：{data}")
-                # 处理错误情况，例如重试请求或返回错误信息
-
-            message = data["message"][len(prev_text):] if self.chatVer == 1 else data
-
-            if ("。" in message or "！" in message or "？" in message or "\n" in message) and len(complete_text) > 3:
-                complete_text += message
-                logging.info('ChatGPT Stream Response: %s, @Time %.2f' % (complete_text, time.time() - stime))
-                logging.debug(f"Yielding stream response: {complete_text.strip()}")
-                yield complete_text.strip()
-                complete_text = ""
-            else:
-                complete_text += message
-
-            prev_text = data["message"] if self.chatVer == 1 else data
-
-        if complete_text.strip():
-            logging.info('ChatGPT Stream Response: %s, @Time %.2f' % (complete_text, time.time() - stime))
-            logging.debug(f"Yielding stream response: {complete_text.strip()}")
-            yield complete_text.strip()
+        stime = time.time()  # 记录开始时间
+        try:
+            completion = openai.ChatCompletion.create(
+                model="qwen-max",  # 指定模型
+                messages=[{'role': 'system', 'content': self.tune}, {'role': 'user', 'content': text}],  # 系统指令和用户输入
+                stream=True,  # 流式响应
+            )
+            for chunk in completion:  # 循环处理流式响应
+                response = chunk.choices[0].delta.content  # 获取响应片段
+                if response:
+                    yield response  # 生成器，逐段返回响应
+                time.sleep(0.1)  # 暂停一小段时间
+        except openai.error.OpenAIError as e:
+            logging.error(f'通义千问 API 流式传输错误：{e}')  # 日志记录 API 流式传输错误
+            yield f"错误：通义千问 API 流式传输请求失败: {e}"  # 返回错误信息
+        except Exception as e:
+            logging.exception(f'未知错误: {e}')  # 日志记录其他异常
+            yield "错误：发生未知错误。"  # 返回错误信息

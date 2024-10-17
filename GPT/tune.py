@@ -1,15 +1,14 @@
 import logging
 
 def get_tune(character, model):
-    if "3.5" in model:
-        filename = character+'35.txt'
-        logging.info('chatGPT prompt: %s' % filename)
-        return open('GPT/prompts/' + filename, 'r', encoding='utf-8').read()
-    if '4' in model:
-        filename = character+'4.txt'
-        logging.info('chatGPT prompt: %s' % filename)
-        return open('GPT/prompts/' + filename, 'r', encoding='utf-8').read()
-
+    filename = f"{character}{'35' if '3.5' in model else '4'}.txt"
+    try:
+        logging.info(f'chatGPT prompt: {filename}')
+        with open(f'GPT/prompts/{filename}', 'r', encoding='utf-8') as f:
+            return f.read()
+    except FileNotFoundError:
+        logging.error(f"Prompt file '{filename}' not found.")
+        return "" # Return empty string if file is not found
 
 
 

@@ -52,6 +52,7 @@ def parse_args():
     parser.add_argument("--stream", type=str2bool, nargs='?', required=True)
     parser.add_argument("--character", type=str, nargs='?', required=True)
     parser.add_argument("--ip", type=str, nargs='?', required=False)
+    parser.add_argument("--baseUrl", type=str, nargs='?', required=False)
     parser.add_argument("--brainwash", type=str2bool, nargs='?', required=False)
     return parser.parse_args()
 
