@@ -49,7 +49,7 @@ class GPTService():
                 logging.info('using custom API proxy, with rate limit.')
                 os.environ['API_URL'] = "https://www.gptapi.us"
                 #api_key = mach_id
-                api_key = "sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7"
+                api_key = "sk-xxxx"
 
             self.chatbot = Chatbot(api_key=api_key, proxy=args.proxy, system_prompt=self.tune)
             logging.info('API Chatbot initialized.')
