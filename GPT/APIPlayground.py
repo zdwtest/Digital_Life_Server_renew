@@ -3,7 +3,7 @@ import os
 
 
 os.environ['API_URL'] = "https://www.gptapi.us"
-chatbot = Chatbot(api_key="sk-EOiCMBOnmLHLGc3x27307cAbE2094d8980980813Ba766aB7")
+chatbot = Chatbot(api_key="sk-xxxx")
 print("Chatbot: ")
 prev_text = ""
 complete_text = ""
