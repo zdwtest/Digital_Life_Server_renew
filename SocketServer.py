@@ -59,7 +59,7 @@ def parse_args():
     parser.add_argument("--accessToken", type=str, nargs='?', required=False)
     parser.add_argument("--proxy", type=str, nargs='?', required=False)
     parser.add_argument("--paid", type=str2bool, nargs='?', required=False)
-    parser.add_argument("--model", type=str, nargs='?', required=False)
+    parser.add_argument("--model", type=str, nargs='?', required=True)
     parser.add_argument("--stream", type=str2bool, nargs='?', required=True)
     parser.add_argument("--character", type=str, nargs='?', required=True)
     parser.add_argument("--ip", type=str, nargs='?', required=False)
@@ -93,6 +93,8 @@ class Server():
 
         # PARAFORMER
         self.paraformer = ASRService.ASRService('./ASR/resources/config.yaml')
+
+        # LLM
 
         if not args.APIKey and not args.model and not args.llms:
             logging.error("No API key, model, or llms provided. Exiting...")
