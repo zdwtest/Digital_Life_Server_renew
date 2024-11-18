@@ -12,42 +12,59 @@ from langchain_community.document_loaders import (
 from typing import Optional, List
 import os
 from langchain_core.runnables import RunnablePassthrough
-
 class RAGService:
-    def __init__(self,
-                 embedding_type: str = "openai",
-                 docs_dir: str = "docs",
-                 db_dir: str = "db",
-                 openai_api_base: Optional[str] = None,
-                 llm = None):
-        """
-        初始化RAG服务
+    @classmethod
+    async def create(cls,
+                    embedding_type: str = "huggingface",
+                    docs_dir: str = "docs",
+                    db_dir: str = "db",
+                    openai_api_base: Optional[str] = None,
+                    openai_api_key: Optional[str] = None,
+                    llm = None):
+        """异步工厂方法创建 RAGService 实例"""
+        instance = cls()
+        instance.openai_api_key = openai_api_key
+        instance.embeddings = instance._init_embeddings(embedding_type, openai_api_base)
+        instance.docs_dir = docs_dir
+        instance.db_dir = db_dir
+        instance.vector_store = None
+        instance.llm = llm
+        instance.qa_chain = None
+
+        # 初始化向量存储
+        instance.load_vector_store()
+        if not instance.vector_store:
+            texts = instance.load_documents()
+            instance.create_vector_store(texts)
         
-        Args:
-            embedding_type: 嵌入模型类型 ("openai", "huggingface")
-            docs_dir: 知识库文档目录
-            db_dir: 向量数据库存储目录
-            openai_api_base: OpenAI API的基础地址
-            llm: 使用的LLM模型实例
-        """
-        self.embeddings = self._init_embeddings(embedding_type, openai_api_base)
-        self.docs_dir = docs_dir
-        self.db_dir = db_dir
-        self.vector_store = None
-        self.llm = llm
-        self.qa_chain = None
-    
+        # 初始化问答链
+        await instance.init_qa_chain()
+        
+        return instance
+
+    def __init__(self):
+        """简化的初始化方法"""
+        pass
+
     def _init_embeddings(self, embedding_type: str, openai_api_base: Optional[str] = None):
         """初始化嵌入模型"""
-        kwargs = {}
-        if openai_api_base:
-            kwargs["openai_api_base"] = openai_api_base
         if embedding_type == "openai":
-            kwargs["openai_api_key"] = os.environ.get("OPENAI_API_KEY")
+            # 检查 openai_api_key 是否作为实例变量存在
+            if not self.openai_api_key:
+                raise ValueError("未找到 OPENAI_API_KEY")
+            
+            kwargs = {
+                "openai_api_key": self.openai_api_key
+            }
+            
+            # 如果提供了自定义 API 基础地址
+            if openai_api_base:
+                kwargs["openai_api_base"] = openai_api_base
+            
             return OpenAIEmbeddings(**kwargs)
         elif embedding_type == "huggingface":
             return HuggingFaceEmbeddings(
-                model_name="all-MiniLM-L6-v2"
+                model_name="sentence-transformers/all-MiniLM-L6-v2"
             )
         else:
             raise ValueError(f"不支持的嵌入模型类型: {embedding_type}")
@@ -113,7 +130,7 @@ class RAGService:
         docs = await self.similarity_search(question)
         return "\n".join([doc.page_content for doc in docs])
 
-    def init_qa_chain(self) -> None:
+    async def init_qa_chain(self) -> None:
         """初始化异步问答链"""
         if not self.vector_store:
             raise ValueError("请先初始化或加载向量存储")

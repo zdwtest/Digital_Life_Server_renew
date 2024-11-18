@@ -1,8 +1,9 @@
-from langchain.tools import BaseTool, DuckDuckGoSearchRun
+from langchain_community.tools import BaseTool, DuckDuckGoSearchRun
 from langchain.agents import Tool
 from datetime import datetime
 from LCS.rag import RAGService
 from typing import Optional
+from pydantic import Field
 
 class KnowledgeBaseTool(BaseTool):
     name: str = "knowledge_base"
@@ -11,10 +12,10 @@ class KnowledgeBaseTool(BaseTool):
     输入应该是具体的查询问题。
     不要用于查询实时或最新信息。
     """
+    rag_service: RAGService
     
-    def __init__(self, rag_service: RAGService):
-        super().__init__()
-        self.rag_service = rag_service
+    def __init__(self, rag_service: RAGService, **data):
+        super().__init__(rag_service=rag_service, **data)
     
     async def _arun(self, query: str) -> str:
         result = await self.rag_service.query(query)

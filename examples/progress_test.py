@@ -32,9 +32,9 @@ async def test_langchain_service():
                 "temperature": 0.7,
                 "model_name": "gpt-3.5-turbo"
             },
-            embedding_type="openai",
-            docs_dir="your_docs_path",
-            db_dir="your_db_path",
+            embedding_type="huggingface",
+            docs_dir="docs",
+            db_dir="db",
             use_existing_db=True,
             enable_agent=True,
             callback=visualizer.progress_callback,  # 注入进度回调

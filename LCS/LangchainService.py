@@ -36,7 +36,7 @@ class LangchainService:
     def __init__(self, 
                 llm_type: str = "openai",
                 model_config: dict = None,
-                embedding_type: str = "openai",
+                embedding_type: str = "huggingface",
                 docs_dir: str = "docs",
                 db_dir: str = "db",
                 use_existing_db: bool = False,
@@ -72,17 +72,26 @@ class LangchainService:
             self.init_params['model_config']
         )
         
-        self.rag_service = await RAGService(
-            embedding_type=self.init_params['embedding_type'],
-            docs_dir=self.init_params['docs_dir'],
-            db_dir=self.init_params['db_dir'],
-            openai_api_base=self.openai_api_base,
-            llm=self.llm
-        ).async_init()
-        
-        if self.init_params['use_existing_db']:
-            await self.rag_service.async_load_vector_store()
-            await self.rag_service.async_init_qa_chain()
+        # 修改错误处理逻辑
+        try:
+            self.rag_service = await RAGService.create(
+                embedding_type=self.init_params['embedding_type'],
+                docs_dir=self.init_params['docs_dir'],
+                db_dir=self.init_params['db_dir'],
+                openai_api_base=self.openai_api_base,
+                llm=self.llm
+            )
+            
+            if self.rag_service is None:
+                raise ValueError("RAGService 初始化失败")
+            
+            if self.init_params['use_existing_db']:
+                self.rag_service.load_vector_store()
+                await self.rag_service.init_qa_chain()
+        except Exception as e:
+            print(f"RAGService 初始化错误: {str(e)}")
+            self.rag_service = None
+            raise
         
         if self.init_params['enable_agent']:
             await self._init_agent()
