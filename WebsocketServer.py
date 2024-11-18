@@ -1,15 +1,16 @@
 import argparse
+import asyncio
 import os
-import socket
-import time
 import logging
 import traceback
+import json
 from logging.handlers import TimedRotatingFileHandler
 
 import librosa
 import requests
 import revChatGPT
 import soundfile
+import websockets
 
 import GPT.tune
 from utils.FlushingFileHandler import FlushingFileHandler
@@ -54,31 +55,22 @@ def parse_args():
     parser.add_argument("--ip", type=str, nargs='?', required=False)
     parser.add_argument("--baseUrl", type=str, nargs='?', required=False)
     parser.add_argument("--brainwash", type=str2bool, nargs='?', required=False)
+    parser.add_argument("--port", type=int, default=8765, help="WebSocket port")  # Add WebSocket port argument
     return parser.parse_args()
 
 
 class Server():
     def __init__(self, args):
-        # SERVER STUFF
-        self.addr = None
-        self.conn = None
-        logging.info('Initializing Server...')
-        self.host = socket.gethostbyname(socket.gethostname())
-        self.port = 38438
-        self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.s.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10240000)
-        self.s.bind((self.host, self.port))
+        # ... (Initialization of ASR, GPT, TTS, SentimentEngine remains the same)
+
+        self.port = args.port  # Use the port from arguments
         self.tmp_recv_file = 'tmp/server_received.wav'
         self.tmp_proc_file = 'tmp/server_processed.wav'
-
-        ## hard coded character map
-        self.char_name = {
+        self.char_name = {  # CORRECTLY INITIALIZE char_name HERE
             'paimon': ['TTS/models/paimon6k.json', 'TTS/models/paimon6k_390k.pth', 'character_paimon', 1],
             'yunfei': ['TTS/models/yunfeimix2.json', 'TTS/models/yunfeimix2_53k.pth', 'character_yunfei', 1.1],
             'catmaid': ['TTS/models/catmix.json', 'TTS/models/catmix_107k.pth', 'character_catmaid', 1.2]
-
         }
-
         # PARAFORMER
         self.paraformer = ASRService.ASRService('./ASR/resources/config.yaml')
 
@@ -91,84 +83,101 @@ class Server():
         # Sentiment Engine
         self.sentiment = SentimentEngine.SentimentEngine('SentimentEngine/models/paimon_sentiment.onnx')
 
-    def listen(self):
-        # MAIN SERVER LOOP
-        while True:
-            self.s.listen()
-            logging.info(f"Server is listening on {self.host}:{self.port}...")
-            self.conn, self.addr = self.s.accept()
-            logging.info(f"Connected by {self.addr}")
-            self.conn.sendall(b'%s' % self.char_name[args.character][2].encode())
-            while True:
-                try:
-                    file = self.__receive_file()
-                    # print('file received: %s' % file)
+
+    async def handler(self, websocket, char_name):  # Add char_name as parameter
+        logging.info(f"New client connected: {websocket.remote_address}")
+        print(dir(self))
+        await websocket.send(char_name[args.character][2])
+        async for message in websocket:
+
+            try:
+                data = json.loads(message)
+                if data["type"] == "audio":
+                    audio_data = bytes.fromhex(data["data"])
                     with open(self.tmp_recv_file, 'wb') as f:
-                        f.write(file)
-                        logging.info('WAV file received and saved.')
+                        f.write(audio_data)
+                    logging.info('WAV file received and saved.')
                     ask_text = self.process_voice()
+
+                elif data["type"] == "text":  # Handle text messages
+                    ask_text = data["data"]
+                    logging.info(f"Received text message: {ask_text}")
+
+                    # Process the text message (e.g., send to GPT-3, etc.)
+                    receive_text = f"Server received: {ask_text}"  # Example response
+                    respond_text = self.chat_gpt.ask(ask_text)
+                    # Send the response back to the client
+                    await websocket.send(json.dumps({
+                        "type": "text_receive",
+                        "data": receive_text
+                    }))
+
+                    # Send the response back to the client
+                    await websocket.send(json.dumps({
+                        "type": "text_respond",
+                        "data": respond_text
+                    }))
+
                     if args.stream:
-                        for sentence in self.chat_gpt.ask_stream(ask_text):
-                            self.send_voice(sentence)
-                        self.notice_stream_end()
-                        logging.info('Stream finished.')
+                        async for sentence in self.chat_gpt.ask_stream(ask_text):
+                            await self.send_voice(websocket, sentence)
+                        await self.notice_stream_end(websocket)
                     else:
                         resp_text = self.chat_gpt.ask(ask_text)
-                        self.send_voice(resp_text)
-                        self.notice_stream_end()
-                except revChatGPT.typings.APIConnectionError as e:
-                    logging.error(e.__str__())
-                    logging.info('API rate limit exceeded, sending: %s' % GPT.tune.exceed_reply)
-                    self.send_voice(GPT.tune.exceed_reply, 2)
-                    self.notice_stream_end()
-                except revChatGPT.typings.Error as e:
-                    logging.error(e.__str__())
-                    logging.info('Something wrong with OPENAI, sending: %s' % GPT.tune.error_reply)
-                    self.send_voice(GPT.tune.error_reply, 1)
-                    self.notice_stream_end()
-                except requests.exceptions.RequestException as e:
-                    logging.error(e.__str__())
-                    logging.info('Something wrong with internet, sending: %s' % GPT.tune.error_reply)
-                    self.send_voice(GPT.tune.error_reply, 1)
-                    self.notice_stream_end()
-                except Exception as e:
-                    logging.error(e.__str__())
-                    logging.error(traceback.format_exc())
-                    break
+                        await self.send_voice(websocket, resp_text)
+                        await self.notice_stream_end(websocket)
 
-    def notice_stream_end(self):
-        time.sleep(0.5)
-        self.conn.sendall(b'stream_finished')
+            except (json.JSONDecodeError, KeyError) as e:
+                logging.error(f"Invalid message format: {e}")
+                await websocket.send(json.dumps({"error": "Invalid message format"}))
 
-    def send_voice(self, resp_text, senti_or = None):
+            except (revChatGPT.typings.APIConnectionError,
+                    revChatGPT.typings.Error, requests.exceptions.RequestException) as e:
+                logging.error(e.__str__())
+                await self.send_error(websocket, GPT.tune.error_reply, 1)
+
+            except Exception as e:
+                logging.error(e.__str__())
+                logging.error(traceback.format_exc())
+                await websocket.send(json.dumps({"error": "Internal server error"}))
+
+    async def notice_stream_end(self, websocket):
+        await websocket.send(json.dumps({"type": "stream_end"}))
+
+    async def send_voice(self, websocket, resp_text, senti_or=None):
         self.tts.read_save(resp_text, self.tmp_proc_file, self.tts.hps.data.sampling_rate)
         with open(self.tmp_proc_file, 'rb') as f:
-            senddata = f.read()
+            sendData = f.read()
+
         if senti_or:
             senti = senti_or
         else:
             senti = self.sentiment.infer(resp_text)
-        senddata += b'?!'
-        senddata += b'%i' % senti
-        self.conn.sendall(senddata)
-        time.sleep(0.5)
-        logging.info('WAV SENT, size %i' % len(senddata))
 
-    def __receive_file(self):
-        file_data = b''
-        while True:
-            data = self.conn.recv(1024)
-            # print(data)
-            self.conn.send(b'sb')
-            if data[-2:] == b'?!':
-                file_data += data[0:-2]
-                break
-            if not data:
-                # logging.info('Waiting for WAV...')
-                continue
-            file_data += data
+        await websocket.send(json.dumps({
+            "type": "audio_response",
+            "data": "tmp/server_received.wav",
+            #"data": sendData.hex(),
+            "sentiment": int(senti)
+        }))
 
-        return file_data
+        #logging.info('WAV SENT, size %i' % len(senddata))
+        logging.info('音频地址已发送')
+
+    # ... (process_voice, fill_size_wav remain the same)
+
+    async def send_error(self, websocket, message, sentiment):
+        # Synthesize the error message to speech
+        self.tts.read_save(message, self.tmp_proc_file, self.tts.hps.data.sampling_rate)
+        with open(self.tmp_proc_file, 'rb') as f:
+            senddata = f.read()
+
+        await websocket.send(json.dumps({
+            "type": "audio_response",
+            "data": senddata.hex(),
+            "sentiment": sentiment
+        }))
+        await self.notice_stream_end(websocket)
 
     def fill_size_wav(self):
         with open(self.tmp_recv_file, "r+b") as f:
@@ -182,7 +191,6 @@ class Server():
             f.flush()
 
     def process_voice(self):
-        # stereo to mono
         self.fill_size_wav()
         y, sr = librosa.load(self.tmp_recv_file, sr=None, mono=False)
         y_mono = librosa.to_mono(y)
@@ -192,12 +200,18 @@ class Server():
 
         return text
 
+    async def run(self):
+        async with websockets.serve(lambda websocket: self.handler(websocket, self.char_name), "0.0.0.0",
+                                    self.port):  # Pass char_name here
+            logging.info(f"WebSocket server started on port {self.port}")
+            await asyncio.Future()  # Run forever
+
 
 if __name__ == '__main__':
     try:
         args = parse_args()
         s = Server(args)
-        s.listen()
+        asyncio.run(s.run())
     except Exception as e:
         logging.error(e.__str__())
         logging.error(traceback.format_exc())
