@@ -1,0 +1,1801 @@
+2024-10-17 17:11:48,695 INFO Initializing Server...
+2024-10-17 17:11:48,698 INFO Initializing ASR Service...
+2024-10-17 17:11:52,138 INFO Initializing ChatGPT Service...
+2024-10-17 17:11:52,138 INFO chatGPT prompt: catmaid35.txt
+2024-10-17 17:11:52,348 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 17:11:52,701 INFO using custom API proxy, with rate limit.
+2024-10-17 17:11:55,618 INFO API Chatbot initialized.
+2024-10-17 17:11:55,618 INFO Initializing TTS Service for character_catmaid...
+2024-10-17 17:11:55,618 ERROR [Errno 2] No such file or directory: 'TTS/models/catmix.json'
+2024-10-17 17:11:55,620 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 88, in __init__
+    self.tts = TTService.TTService(*self.char_name[args.character])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\TTS\TTService.py", line 34, in __init__
+    self.hps = utils.get_hparams_from_file(cfg)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\TTS\vits\utils.py", line 186, in get_hparams_from_file
+    with open(config_path, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'TTS/models/catmix.json'
+
+2024-10-17 17:13:03,702 INFO Initializing Server...
+2024-10-17 17:13:03,705 INFO Initializing ASR Service...
+2024-10-17 17:13:06,785 INFO Initializing ChatGPT Service...
+2024-10-17 17:13:06,787 INFO chatGPT prompt: yunfeimix35.txt
+2024-10-17 17:13:06,787 ERROR [Errno 2] No such file or directory: 'GPT/prompts/yunfeimix35.txt'
+2024-10-17 17:13:06,788 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 85, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 14, in __init__
+    self.tune = tune.get_tune(args.character, args.model)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\tune.py", line 7, in get_tune
+    return open('GPT/prompts/' + filename, 'r', encoding='utf-8').read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'GPT/prompts/yunfeimix35.txt'
+
+2024-10-17 17:15:01,460 INFO Initializing Server...
+2024-10-17 17:15:01,463 INFO Initializing ASR Service...
+2024-10-17 17:15:04,603 INFO Initializing ChatGPT Service...
+2024-10-17 17:15:04,604 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 17:15:04,753 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 17:15:04,871 INFO using custom API proxy, with rate limit.
+2024-10-17 17:15:05,201 INFO API Chatbot initialized.
+2024-10-17 17:15:05,202 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 17:15:05,202 ERROR [Errno 2] No such file or directory: 'TTS/models/yunfeimix2.json'
+2024-10-17 17:15:05,203 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 88, in __init__
+    self.tts = TTService.TTService(*self.char_name[args.character])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\TTS\TTService.py", line 34, in __init__
+    self.hps = utils.get_hparams_from_file(cfg)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\TTS\vits\utils.py", line 186, in get_hparams_from_file
+    with open(config_path, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'TTS/models/yunfeimix2.json'
+
+2024-10-17 17:19:12,401 INFO Initializing Server...
+2024-10-17 17:19:12,404 INFO Initializing ASR Service...
+2024-10-17 17:19:15,612 INFO Initializing ChatGPT Service...
+2024-10-17 17:19:15,613 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 17:19:15,779 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 17:19:15,912 INFO using custom API proxy, with rate limit.
+2024-10-17 17:19:16,265 INFO API Chatbot initialized.
+2024-10-17 17:19:16,266 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 17:19:17,809 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 17:19:17,813 INFO Initializing Sentiment Engine...
+2024-10-17 17:19:21,919 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 17:26:20,271 INFO Connected by ('10.1.0.173', 45656)
+2024-10-17 17:26:30,285 ERROR [Errno 2] No such file or directory: 'tmp/server_received.wav'
+2024-10-17 17:26:30,286 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 105, in listen
+    with open(self.tmp_recv_file, 'wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'tmp/server_received.wav'
+
+2024-10-17 17:26:30,286 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 17:32:54,129 INFO Initializing Server...
+2024-10-17 17:32:54,132 INFO Initializing ASR Service...
+2024-10-17 17:32:56,985 INFO Initializing ChatGPT Service...
+2024-10-17 17:32:56,985 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 17:32:57,125 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 17:32:57,240 INFO using custom API proxy, with rate limit.
+2024-10-17 17:32:57,549 INFO API Chatbot initialized.
+2024-10-17 17:32:57,550 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 17:32:58,277 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 17:32:58,280 INFO Initializing Sentiment Engine...
+2024-10-17 17:32:59,691 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 17:33:18,362 INFO Connected by ('10.1.0.173', 41082)
+2024-10-17 17:33:21,883 ERROR [Errno 2] No such file or directory: 'tmp/server_received.wav'
+2024-10-17 17:33:21,883 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 105, in listen
+    with open(self.tmp_recv_file, 'wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'tmp/server_received.wav'
+
+2024-10-17 17:33:21,884 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 17:35:05,241 INFO Connected by ('10.1.0.173', 41366)
+2024-10-17 17:35:11,271 INFO WAV file received and saved.
+2024-10-17 17:35:19,302 INFO ASR Result: ['hel@']. time used 0.09.
+2024-10-17 17:35:19,940 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 17:35:19,948 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 58, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 17:35:19,949 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 17:37:04,480 INFO Connected by ('10.1.0.200', 47644)
+2024-10-17 21:58:33,014 ERROR [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2024-10-17 21:58:33,015 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 103, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 161, in __receive_file
+    self.conn.send(b'sb')
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+2024-10-17 21:58:33,024 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 21:58:33,025 INFO Connected by ('10.1.0.200', 43066)
+2024-10-17 21:58:33,807 ERROR [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2024-10-17 21:58:33,808 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 103, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 161, in __receive_file
+    self.conn.send(b'sb')
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+2024-10-17 21:58:33,808 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:00:44,438 INFO Connected by ('10.1.0.173', 49934)
+2024-10-17 22:01:03,022 INFO WAV file received and saved.
+2024-10-17 22:01:03,109 INFO ASR Result: ['hel@']. time used 0.08.
+2024-10-17 22:01:03,789 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:01:03,789 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 58, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:01:03,790 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:02:50,642 INFO Initializing Server...
+2024-10-17 22:02:50,645 INFO Initializing ASR Service...
+2024-10-17 22:02:53,524 INFO Initializing ChatGPT Service...
+2024-10-17 22:02:53,524 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:02:53,666 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:02:53,785 INFO using custom API proxy, with rate limit.
+2024-10-17 22:02:54,094 INFO API Chatbot initialized.
+2024-10-17 22:02:54,095 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:02:54,800 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:02:54,803 INFO Initializing Sentiment Engine...
+2024-10-17 22:02:56,268 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:03:19,560 INFO Connected by ('10.1.0.173', 48672)
+2024-10-17 22:03:26,641 INFO WAV file received and saved.
+2024-10-17 22:03:28,099 INFO ASR Result: ['啊你好啊你好啊']. time used 0.10.
+2024-10-17 22:03:28,721 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:03:28,723 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 60, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:03:28,724 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:05:03,244 INFO Initializing Server...
+2024-10-17 22:05:03,247 INFO Initializing ASR Service...
+2024-10-17 22:05:06,115 INFO Initializing ChatGPT Service...
+2024-10-17 22:05:06,115 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:05:06,253 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:05:06,366 INFO using custom API proxy, with rate limit.
+2024-10-17 22:05:06,679 INFO API Chatbot initialized.
+2024-10-17 22:05:06,680 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:05:07,387 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:05:07,391 INFO Initializing Sentiment Engine...
+2024-10-17 22:05:08,909 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:05:22,343 INFO Connected by ('10.1.0.173', 39836)
+2024-10-17 22:05:26,854 INFO WAV file received and saved.
+2024-10-17 22:05:28,139 ERROR negative dimensions are not allowed
+2024-10-17 22:05:28,147 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 108, in listen
+    ask_text = self.process_voice()
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 190, in process_voice
+    text = self.paraformer.infer(self.tmp_recv_file)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\ASRService.py", line 14, in infer
+    result = self.paraformer(wav_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\rapid_paraformer.py", line 42, in __call__
+    feats, feats_len = self.extract_feat(waveform_list[beg_idx:end_idx])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\rapid_paraformer.py", line 79, in extract_feat
+    speech, _ = self.frontend.fbank(waveform)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\utils.py", line 162, in fbank
+    mat = compute_fbank_feats(waveform,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\kaldifeat\feature.py", line 316, in compute_fbank_feats
+    frames, log_energy = extract_window(
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\kaldifeat\feature.py", line 117, in extract_window
+    frames = sliding_window(waveform, window_size=window_size, window_shift=window_shift)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\ASR\rapid_paraformer\kaldifeat\feature.py", line 10, in sliding_window
+    return np.lib.stride_tricks.as_strided(x, shape=shape, strides=strides)[::window_shift]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\numpy\lib\_stride_tricks_impl.py", line 111, in as_strided
+    array = np.asarray(DummyArray(interface, base=x))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: negative dimensions are not allowed
+
+2024-10-17 22:05:28,148 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:06:17,442 INFO Initializing Server...
+2024-10-17 22:06:17,445 INFO Initializing ASR Service...
+2024-10-17 22:06:20,301 INFO Initializing ChatGPT Service...
+2024-10-17 22:06:20,302 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:06:20,443 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:06:20,554 INFO using custom API proxy, with rate limit.
+2024-10-17 22:06:20,862 INFO API Chatbot initialized.
+2024-10-17 22:06:20,863 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:06:21,573 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:06:21,576 INFO Initializing Sentiment Engine...
+2024-10-17 22:06:23,064 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:06:31,582 INFO Connected by ('10.1.0.173', 43576)
+2024-10-17 22:06:38,190 INFO WAV file received and saved.
+2024-10-17 22:06:39,510 INFO ASR Result: ['hel@@lohel@']. time used 0.13.
+2024-10-17 22:06:40,191 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:06:40,192 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 60, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:06:40,193 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:07:33,764 INFO Initializing Server...
+2024-10-17 22:07:33,767 INFO Initializing ASR Service...
+2024-10-17 22:07:36,784 INFO Initializing ChatGPT Service...
+2024-10-17 22:07:36,785 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:07:36,963 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:07:37,104 INFO using custom API proxy, with rate limit.
+2024-10-17 22:07:37,431 INFO API Chatbot initialized.
+2024-10-17 22:07:37,431 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:07:38,135 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:07:38,138 INFO Initializing Sentiment Engine...
+2024-10-17 22:07:39,728 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:07:51,291 INFO Connected by ('10.1.0.173', 39886)
+2024-10-17 22:07:58,226 INFO WAV file received and saved.
+2024-10-17 22:07:59,623 INFO ASR Result: ['你好啊你好啊']. time used 0.08.
+2024-10-17 22:08:00,237 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:08:00,238 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 60, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:08:00,240 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:08:11,680 INFO Connected by ('10.1.0.173', 40928)
+2024-10-17 22:08:17,734 INFO WAV file received and saved.
+2024-10-17 22:08:17,864 INFO ASR Result: ['我是原神高手你是谁呀']. time used 0.12.
+2024-10-17 22:08:18,141 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:08:18,142 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 60, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:08:18,143 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:09:07,812 INFO Initializing Server...
+2024-10-17 22:09:07,815 INFO Initializing ASR Service...
+2024-10-17 22:09:10,706 INFO Initializing ChatGPT Service...
+2024-10-17 22:09:10,707 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:09:10,846 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:09:10,959 INFO using custom API proxy, with rate limit.
+2024-10-17 22:09:11,271 INFO API Chatbot initialized.
+2024-10-17 22:09:11,272 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:09:12,007 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:09:12,011 INFO Initializing Sentiment Engine...
+2024-10-17 22:09:13,604 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:09:14,505 INFO Connected by ('10.1.0.173', 47882)
+2024-10-17 22:09:20,568 INFO WAV file received and saved.
+2024-10-17 22:09:21,875 INFO ASR Result: ['我是玩元神的你是谁啊']. time used 0.12.
+2024-10-17 22:09:22,523 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:09:22,524 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 60, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:09:22,525 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:10:40,974 INFO Initializing Server...
+2024-10-17 22:10:40,978 INFO Initializing ASR Service...
+2024-10-17 22:10:43,903 INFO Initializing ChatGPT Service...
+2024-10-17 22:10:43,904 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:10:44,057 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:10:44,181 INFO using custom API proxy, with rate limit.
+2024-10-17 22:10:44,497 INFO API Chatbot initialized.
+2024-10-17 22:10:44,498 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:10:45,341 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:10:45,344 INFO Initializing Sentiment Engine...
+2024-10-17 22:10:46,847 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:12:01,516 INFO Connected by ('10.1.0.173', 48100)
+2024-10-17 22:12:13,068 INFO WAV file received and saved.
+2024-10-17 22:12:17,853 INFO ASR Result: ['你好啊我是玩元神的']. time used 0.12.
+2024-10-17 22:12:18,677 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:12:18,679 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 61, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:12:18,680 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:13:37,525 INFO Initializing Server...
+2024-10-17 22:13:51,740 INFO Initializing ASR Service...
+2024-10-17 22:13:53,758 INFO Initializing ChatGPT Service...
+2024-10-17 22:13:53,759 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 22:13:53,901 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 22:13:54,013 INFO using custom API proxy, with rate limit.
+2024-10-17 22:13:54,325 INFO API Chatbot initialized.
+2024-10-17 22:13:54,326 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 22:13:54,995 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 22:13:54,998 INFO Initializing Sentiment Engine...
+2024-10-17 22:13:56,438 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 22:13:58,354 INFO Connected by ('10.1.0.173', 49800)
+2024-10-17 22:14:02,380 INFO WAV file received and saved.
+2024-10-17 22:14:03,748 INFO ASR Result: ['你好啊']. time used 0.09.
+2024-10-17 22:14:04,433 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 22:14:04,435 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 61, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 22:14:04,436 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 23:12:32,589 INFO Initializing Server...
+2024-10-17 23:12:32,592 INFO Initializing ASR Service...
+2024-10-17 23:12:35,656 INFO Initializing ChatGPT Service...
+2024-10-17 23:12:35,657 INFO chatGPT prompt: yunfei35.txt
+2024-10-17 23:12:35,875 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-17 23:12:36,013 INFO using custom API proxy, with rate limit.
+2024-10-17 23:12:36,338 INFO API Chatbot initialized.
+2024-10-17 23:12:36,339 INFO Initializing TTS Service for character_yunfei...
+2024-10-17 23:12:37,228 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-17 23:12:37,232 INFO Initializing Sentiment Engine...
+2024-10-17 23:12:38,735 INFO Server is listening on 10.1.0.189:38438...
+2024-10-17 23:12:40,342 INFO Connected by ('10.1.0.173', 41606)
+2024-10-17 23:12:44,463 INFO WAV file received and saved.
+2024-10-17 23:12:46,708 INFO ASR Result: ['你好啊你好']. time used 0.09.
+2024-10-17 23:12:47,587 ERROR Expecting value: line 1 column 1 (char 0)
+2024-10-17 23:12:47,609 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 115, in listen
+    resp_text = self.chat_gpt.ask(ask_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 61, in ask
+    prev_text = self.chatbot.ask(text)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 337, in ask
+    full_response: str = "".join(response)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\revChatGPT\V3.py", line 215, in ask_stream
+    resp: dict = json.loads(line)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2024-10-17 23:12:47,610 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:21:49,872 INFO Initializing Server...
+2024-10-18 00:21:49,875 INFO Initializing ASR Service...
+2024-10-18 00:21:53,047 INFO Initializing ChatGPT Service...
+2024-10-18 00:21:59,356 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:21:59,501 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-18 00:21:59,622 INFO using custom API proxy, with rate limit.
+2024-10-18 00:21:59,937 INFO API Chatbot initialized.
+2024-10-18 00:21:59,937 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 00:22:00,721 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 00:22:00,724 INFO Initializing Sentiment Engine...
+2024-10-18 00:22:02,275 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:22:24,899 INFO Connected by ('10.1.0.173', 40626)
+2024-10-18 00:22:34,441 INFO WAV file received and saved.
+2024-10-18 00:22:35,789 INFO ASR Result: ['hel@@lohel']. time used 0.12.
+2024-10-18 00:22:36,137 ERROR ChatGPT Error: 404 Not Found 
+2024-10-18 00:22:37,954 INFO VITS Synth Done, time used 1.82
+2024-10-18 00:22:37,975 INFO Sentiment Engine Infer: 0
+2024-10-18 00:22:38,476 INFO WAV SENT, size 157743
+2024-10-18 00:23:01,447 INFO WAV file received and saved.
+2024-10-18 00:23:11,237 INFO ASR Result: ['你好我是关月成']. time used 0.10.
+2024-10-18 00:23:11,557 ERROR ChatGPT Error: 404 Not Found 
+2024-10-18 00:23:11,894 INFO VITS Synth Done, time used 0.34
+2024-10-18 00:23:11,911 INFO Sentiment Engine Infer: 0
+2024-10-18 00:23:12,412 INFO WAV SENT, size 151087
+2024-10-18 00:23:45,487 INFO WAV file received and saved.
+2024-10-18 00:23:45,596 INFO ASR Result: ['wha@@']. time used 0.10.
+2024-10-18 00:23:45,906 ERROR ChatGPT Error: 404 Not Found 
+2024-10-18 00:23:46,281 INFO VITS Synth Done, time used 0.37
+2024-10-18 00:23:46,298 INFO Sentiment Engine Infer: 0
+2024-10-18 00:23:46,799 INFO WAV SENT, size 158255
+2024-10-18 00:27:58,773 INFO Initializing Server...
+2024-10-18 00:27:58,776 INFO Initializing ASR Service...
+2024-10-18 00:28:01,820 INFO Initializing ChatGPT Service...
+2024-10-18 00:28:01,821 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:28:01,961 INFO machine identifier: 00:02:C9:53:62:E6
+2024-10-18 00:28:02,071 INFO using custom API proxy, with rate limit.
+2024-10-18 00:28:02,386 INFO API Chatbot initialized.
+2024-10-18 00:28:02,387 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 00:28:11,176 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 00:28:11,179 INFO Initializing Sentiment Engine...
+2024-10-18 00:28:12,665 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:28:42,927 INFO Connected by ('10.1.0.173', 43242)
+2024-10-18 00:28:50,457 INFO WAV file received and saved.
+2024-10-18 00:28:51,736 INFO ASR Result: ['whatha']. time used 0.09.
+2024-10-18 00:28:52,053 ERROR ChatGPT Error: 404 Not Found 
+2024-10-18 00:28:53,402 INFO VITS Synth Done, time used 1.35
+2024-10-18 00:28:53,419 INFO Sentiment Engine Infer: 0
+2024-10-18 00:28:53,921 INFO WAV SENT, size 151087
+2024-10-18 00:29:03,462 INFO WAV file received and saved.
+2024-10-18 00:29:03,563 INFO ASR Result: ['你好你好']. time used 0.09.
+2024-10-18 00:29:03,874 ERROR ChatGPT Error: 404 Not Found 
+2024-10-18 00:29:04,180 INFO VITS Synth Done, time used 0.31
+2024-10-18 00:29:04,198 INFO Sentiment Engine Infer: 0
+2024-10-18 00:29:04,699 INFO WAV SENT, size 155695
+2024-10-18 00:30:19,575 ERROR [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2024-10-18 00:30:19,575 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 103, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 159, in __receive_file
+    data = self.conn.recv(1024)
+           ^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+2024-10-18 00:30:19,576 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:48:20,036 INFO Initializing Server...
+2024-10-18 00:48:20,039 INFO Initializing ASR Service...
+2024-10-18 00:48:23,067 INFO 正在初始化通义千问服务...
+2024-10-18 00:48:23,067 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:48:23,071 INFO 使用默认 API 密钥 - 请替换此密钥！
+2024-10-18 00:48:23,072 ERROR 环境变量 DASHSCOPE_API_KEY 未设置，请设置您的 API 密钥。
+2024-10-18 00:48:23,072 ERROR API key not found.
+2024-10-18 00:48:23,073 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 85, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 28, in __init__
+    raise ValueError("API key not found.")
+ValueError: API key not found.
+
+2024-10-18 00:48:53,807 INFO Initializing Server...
+2024-10-18 00:48:53,810 INFO Initializing ASR Service...
+2024-10-18 00:48:55,899 INFO 正在初始化通义千问服务...
+2024-10-18 00:48:55,900 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:48:55,900 INFO 使用默认 API 密钥 - 请替换此密钥！
+2024-10-18 00:48:55,901 ERROR 环境变量 DASHSCOPE_API_KEY 未设置，请设置您的 API 密钥。
+2024-10-18 00:48:55,901 ERROR API key not found.
+2024-10-18 00:48:55,903 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 85, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 28, in __init__
+    raise ValueError("API key not found.")
+ValueError: API key not found.
+
+2024-10-18 00:49:39,933 INFO Initializing Server...
+2024-10-18 00:49:39,935 INFO Initializing ASR Service...
+2024-10-18 00:49:42,016 INFO 正在初始化通义千问服务...
+2024-10-18 00:49:42,016 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:49:42,017 INFO 使用提供的 API 密钥。
+2024-10-18 00:49:42,017 ERROR module 'openai' has no attribute 'OpenAI'
+2024-10-18 00:49:42,018 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 85, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 31, in __init__
+    self.client = openai.OpenAI(
+                  ^^^^^^^^^^^^^
+AttributeError: module 'openai' has no attribute 'OpenAI'
+
+2024-10-18 00:50:55,620 INFO Initializing Server...
+2024-10-18 00:50:55,624 INFO Initializing ASR Service...
+2024-10-18 00:50:57,694 INFO 正在初始化通义千问服务...
+2024-10-18 00:50:57,695 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:50:57,695 INFO 使用提供的 API 密钥。
+2024-10-18 00:50:57,695 ERROR module 'openai' has no attribute 'OpenAI'
+2024-10-18 00:50:57,696 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 85, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\GPT\GPTService.py", line 31, in __init__
+    self.client = openai.OpenAI(
+                  ^^^^^^^^^^^^^
+AttributeError: module 'openai' has no attribute 'OpenAI'
+
+2024-10-18 00:53:56,981 INFO Initializing Server...
+2024-10-18 00:53:56,984 INFO Initializing ASR Service...
+2024-10-18 00:53:59,050 INFO 正在初始化通义千问服务...
+2024-10-18 00:53:59,051 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:53:59,051 INFO 使用提供的 API 密钥。
+2024-10-18 00:53:59,052 INFO 通义千问 API 机器人已初始化。
+2024-10-18 00:53:59,052 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 00:53:59,771 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 00:53:59,776 INFO Initializing Sentiment Engine...
+2024-10-18 00:54:01,282 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:54:07,678 INFO Connected by ('10.1.0.173', 45148)
+2024-10-18 00:54:12,700 INFO WAV file received and saved.
+2024-10-18 00:54:14,006 INFO ASR Result: ['你好你好我是玩原神玩的']. time used 0.11.
+2024-10-18 00:54:14,497 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 00:54:14,498 ERROR 通义千问 API 错误：Input data may contain inappropriate content.
+2024-10-18 00:54:15,782 INFO VITS Synth Done, time used 1.28
+2024-10-18 00:54:15,806 INFO Sentiment Engine Infer: 4
+2024-10-18 00:54:16,307 INFO WAV SENT, size 516143
+2024-10-18 00:54:36,710 INFO WAV file received and saved.
+2024-10-18 00:54:36,809 INFO ASR Result: ['你是谁']. time used 0.09.
+2024-10-18 00:54:36,976 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 00:54:36,976 ERROR 通义千问 API 错误：Input data may contain inappropriate content.
+2024-10-18 00:54:37,366 INFO VITS Synth Done, time used 0.39
+2024-10-18 00:54:37,385 INFO Sentiment Engine Infer: 4
+2024-10-18 00:54:37,886 INFO WAV SENT, size 542767
+2024-10-18 00:56:27,311 INFO WAV file received and saved.
+2024-10-18 00:56:31,315 INFO ASR Result: ['wha@@t']. time used 0.11.
+2024-10-18 00:56:31,476 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 00:56:31,476 ERROR 通义千问 API 错误：Input data may contain inappropriate content.
+2024-10-18 00:56:31,916 INFO VITS Synth Done, time used 0.44
+2024-10-18 00:56:31,937 INFO Sentiment Engine Infer: 4
+2024-10-18 00:56:32,439 INFO WAV SENT, size 526383
+2024-10-18 00:56:53,815 INFO WAV file received and saved.
+2024-10-18 00:56:53,926 INFO ASR Result: ['你知道和同学吗']. time used 0.10.
+2024-10-18 00:56:54,081 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 00:56:54,082 ERROR 通义千问 API 错误：Input data may contain inappropriate content.
+2024-10-18 00:56:54,521 INFO VITS Synth Done, time used 0.44
+2024-10-18 00:56:54,544 INFO Sentiment Engine Infer: 4
+2024-10-18 00:56:55,045 INFO WAV SENT, size 540207
+2024-10-18 00:57:40,994 INFO Initializing Server...
+2024-10-18 00:57:40,996 INFO Initializing ASR Service...
+2024-10-18 00:57:44,115 INFO 正在初始化通义千问服务...
+2024-10-18 00:57:44,115 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 00:57:44,116 INFO 使用提供的 API 密钥。
+2024-10-18 00:57:44,117 INFO 通义千问 API 机器人已初始化。
+2024-10-18 00:57:44,117 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 00:57:44,838 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 00:57:44,841 INFO Initializing Sentiment Engine...
+2024-10-18 00:57:46,313 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 00:57:53,242 INFO Connected by ('10.1.0.173', 37982)
+2024-10-18 00:58:07,776 INFO WAV file received and saved.
+2024-10-18 00:58:09,066 INFO ASR Result: ['你好你好我是何同学']. time used 0.10.
+2024-10-18 00:58:09,541 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 00:58:09,541 ERROR 通义千问 API 流式传输错误：Input data may contain inappropriate content.
+2024-10-18 00:58:10,875 INFO VITS Synth Done, time used 1.33
+2024-10-18 00:58:10,896 INFO Sentiment Engine Infer: 4
+2024-10-18 00:58:11,397 INFO WAV SENT, size 664623
+2024-10-18 00:58:11,898 INFO Stream finished.
+2024-10-18 01:00:37,564 INFO Initializing Server...
+2024-10-18 01:00:37,566 INFO Initializing ASR Service...
+2024-10-18 01:00:40,593 INFO 正在初始化通义千问服务...
+2024-10-18 01:00:40,593 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:00:40,594 INFO 使用提供的 API 密钥。
+2024-10-18 01:00:40,595 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:00:40,595 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:00:41,306 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:00:41,309 INFO Initializing Sentiment Engine...
+2024-10-18 01:00:42,783 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:00:54,360 INFO Connected by ('10.1.0.173', 37614)
+2024-10-18 01:00:58,381 INFO WAV file received and saved.
+2024-10-18 01:00:59,690 INFO ASR Result: ['你好你好我是何同学']. time used 0.11.
+2024-10-18 01:01:00,182 INFO error_code=data_inspection_failed error_message='Input data may contain inappropriate content.' error_param=None error_type=data_inspection_failed message='OpenAI API error received' stream_error=False
+2024-10-18 01:01:00,182 ERROR 通义千问 API 错误：Input data may contain inappropriate content.
+2024-10-18 01:01:01,456 INFO VITS Synth Done, time used 1.27
+2024-10-18 01:01:01,478 INFO Sentiment Engine Infer: 4
+2024-10-18 01:01:01,979 INFO WAV SENT, size 546351
+2024-10-18 01:02:22,014 ERROR [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2024-10-18 01:02:22,015 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 103, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 159, in __receive_file
+    data = self.conn.recv(1024)
+           ^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+2024-10-18 01:02:22,016 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:02:29,057 INFO Initializing Server...
+2024-10-18 01:02:29,060 INFO Initializing ASR Service...
+2024-10-18 01:02:31,981 INFO 正在初始化通义千问服务...
+2024-10-18 01:02:31,981 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:02:31,982 INFO 使用提供的 API 密钥。
+2024-10-18 01:02:31,983 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:02:31,983 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:02:32,784 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:02:32,788 INFO Initializing Sentiment Engine...
+2024-10-18 01:02:34,254 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:02:34,808 INFO Connected by ('10.1.0.173', 43588)
+2024-10-18 01:02:39,318 INFO WAV file received and saved.
+2024-10-18 01:02:40,613 INFO ASR Result: ['你是谁']. time used 0.09.
+2024-10-18 01:02:42,194 INFO 通义千问响应：我是您的安全助手，可以帮助您了解和应对各种安全问题。如果您有任何关于安全的疑问或需要建议，请随时告诉我！，耗时 1.58 秒
+2024-10-18 01:02:43,484 INFO VITS Synth Done, time used 1.29
+2024-10-18 01:02:43,518 INFO Sentiment Engine Infer: 0
+2024-10-18 01:02:44,020 INFO WAV SENT, size 903727
+2024-10-18 01:03:13,854 INFO WAV file received and saved.
+2024-10-18 01:03:14,001 INFO ASR Result: ['他会回答你今天天气怎么样']. time used 0.14.
+2024-10-18 01:03:17,311 INFO 通义千问响应：我无法直接获取实时天气信息，因为我的功能不包括与外部环境的实时数据连接。不过，你可以告诉我你所在的城市或地区，然后我可以提供一些建议或者信息，帮助你了解如何查询当地的天气情况。比如，你可以通过手机上的天气应用、电视新闻或是网站如中国气象局官网来查看最新的天气预报。这样，无论是晴天还是雨天，你都可以做好相应的准备。，耗时 3.31 秒
+2024-10-18 01:03:18,026 INFO VITS Synth Done, time used 0.72
+2024-10-18 01:03:18,121 INFO Sentiment Engine Infer: 4
+2024-10-18 01:03:18,623 INFO WAV SENT, size 2531887
+2024-10-18 01:09:02,780 INFO Initializing Server...
+2024-10-18 01:09:05,485 INFO Initializing ASR Service...
+2024-10-18 01:09:08,488 INFO 正在初始化通义千问服务...
+2024-10-18 01:09:08,489 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:09:08,490 INFO 使用提供的 API 密钥。
+2024-10-18 01:09:08,490 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:09:08,490 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:09:09,196 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:09:09,199 INFO Initializing Sentiment Engine...
+2024-10-18 01:09:10,692 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:09:26,866 INFO Connected by ('10.1.0.173', 41138)
+2024-10-18 01:09:30,897 INFO WAV file received and saved.
+2024-10-18 01:09:32,209 INFO ASR Result: ['你好我是']. time used 0.11.
+2024-10-18 01:09:35,141 INFO 通义千问响应：你好！很高兴见到你。请问你是来咨询关于生产操作、培训材料、故障排除，还是其他方面的问题呢？或者你可以告诉我更多一点信息，这样我可以更好地帮助你。，耗时 2.93 秒
+2024-10-18 01:09:36,549 INFO VITS Synth Done, time used 1.41
+2024-10-18 01:09:36,596 INFO Sentiment Engine Infer: 0
+2024-10-18 01:09:37,098 INFO WAV SENT, size 1110063
+2024-10-18 01:09:58,495 INFO WAV file received and saved.
+2024-10-18 01:09:58,696 INFO ASR Result: ['呃我现在需要去做激光切割怎么安排']. time used 0.19.
+2024-10-18 01:10:22,581 INFO 通义千问响应：好的，进行激光切割操作前，请确保您已经接受了相关的培训，并熟悉安全规程。下面是一个基本的步骤指南来帮助您安排和执行激光切割任务：
+
+### 1. 准备阶段
+
+- **材料准备**：确认所需的材料类型（如金属板、塑料等）及其尺寸是否符合要求。
+- **图纸审查**：仔细检查设计图纸或CAD文件，确保所有尺寸准确无误。
+- **设备检查**：检查激光切割机的状态，包括但不限于激光头、冷却系统、气体供应（如果需要的话）以及排烟装置是否正常工作。
+
+### 2. 设置参数
+
+- 根据所使用的材料调整合适的功率设置、速度以及其他相关参数。不同材质可能需要不同的设置值。
+- 输入或导入您的切割路径到控制系统中。如果是复杂形状，则可能需要用到专门的软件来生成正确的G代码。
+
+### 3. 安全措施
+
+- 穿戴适当的个人防护装备，比如护目镜以防止激光伤害眼睛。
+- 确保工作区域干净整洁，没有易燃物品靠近机器。
+- 开启通风系统，保持良好的空气流通。
+
+### 4. 执行切割
+
+- 将材料固定在工作台上，使用夹具或其他方式保证其稳定不动。
+- 在开始正式切割之前，可以先做一次试切，检查效果并调整参数直到满意为止。
+- 启动程序，监督整个过程，注意任何异常情况的发生。
+
+### 5. 完成与清理
+
+- 切割完成后，关闭设备电源，移除成品件。
+- 清理现场，包括去除废料、擦拭机器表面等。
+- 如果有必要，对设备进行日常维护保养。
+
+请记得始终遵循制造商提供的具体指导手册以及所在机构的安全规定。如果您是初次尝试或者遇到不确定的情况时，最好寻求有经验同事的帮助。希望这些信息能够帮到您！如果有更详细的需求或者其他问题，欢迎继续提问。，耗时 23.88 秒
+2024-10-18 01:10:26,933 INFO VITS Synth Done, time used 4.35
+2024-10-18 01:10:26,955 ERROR [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape
+2024-10-18 01:10:26,969 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 116, in listen
+    self.send_voice(resp_text)
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 149, in send_voice
+    senti = self.sentiment.infer(resp_text)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SentimentEngine\SentimentEngine.py", line 26, in infer
+    logits = self.ort_session.run(["logits"], input_dict)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\venv\Lib\site-packages\onnxruntime\capi\onnxruntime_inference_collection.py", line 220, in run
+    return self._sess.run(output_names, input_feed, run_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+onnxruntime.capi.onnxruntime_pybind11_state.InvalidArgument: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape
+
+2024-10-18 01:10:26,972 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:11:47,965 INFO Initializing Server...
+2024-10-18 01:11:47,968 INFO Initializing ASR Service...
+2024-10-18 01:11:51,054 INFO 正在初始化通义千问服务...
+2024-10-18 01:11:51,054 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:11:51,055 INFO 使用提供的 API 密钥。
+2024-10-18 01:11:51,055 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:11:51,056 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:11:51,770 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:11:51,775 INFO Initializing Sentiment Engine...
+2024-10-18 01:11:53,387 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:12:02,304 INFO Connected by ('10.1.0.173', 47876)
+2024-10-18 01:12:06,328 INFO WAV file received and saved.
+2024-10-18 01:12:07,792 INFO ASR Result: ['你是谁']. time used 0.11.
+2024-10-18 01:12:11,075 INFO 通义千问响应：我是您的数字助手，专门帮助您解决生产管理、资源分配和技术支持等方面的问题。通过提供操作指南、培训资料和故障排除建议，我能够协助您优化工作流程，提高效率。同时，我还能够以数据可视化的方式呈现关键信息，并生成报告，支持您的决策过程。，耗时 3.28 秒
+2024-10-18 01:12:12,724 INFO VITS Synth Done, time used 1.65
+2024-10-18 01:12:12,790 INFO Sentiment Engine Infer: 0
+2024-10-18 01:12:13,293 INFO WAV SENT, size 1940527
+2024-10-18 01:12:43,892 INFO WAV file received and saved.
+2024-10-18 01:12:44,062 INFO ASR Result: ['那么我现在要做一次实体特训怎么做']. time used 0.16.
+2024-10-18 01:12:49,187 INFO 通义千问响应：进行实体特训前，首先明确训练目标和内容。接着准备所需材料与设备，确保场地安全。制定详细的训练计划，包括时间表、具体活动及预期成果。开始训练时，先做热身运动以防受伤，然后按照计划逐步实施，过程中注意观察参与者状态并适时调整难度。最后，通过反馈会议总结经验教训，评估效果，并规划下一步行动。，耗时 5.12 秒
+2024-10-18 01:12:50,039 INFO VITS Synth Done, time used 0.85
+2024-10-18 01:12:50,114 INFO Sentiment Engine Infer: 0
+2024-10-18 01:12:50,617 INFO WAV SENT, size 2665007
+2024-10-18 01:13:35,207 INFO WAV file received and saved.
+2024-10-18 01:13:35,546 INFO ASR Result: ['呃我现在想要去工厂那么我需要做哪些安全措施']. time used 0.32.
+2024-10-18 01:13:39,710 INFO 通义千问响应：前往工厂前，请穿戴好个人防护装备，如安全帽、防滑鞋、护目镜和工作服。了解紧急疏散路线与集合点，遵守所有安全标识。参加必要的安全培训，确保熟悉设备操作规程及紧急应对措施。进入特定区域前询问是否有额外的安全要求。，耗时 4.16 秒
+2024-10-18 01:13:40,266 INFO VITS Synth Done, time used 0.56
+2024-10-18 01:13:40,314 INFO Sentiment Engine Infer: 0
+2024-10-18 01:13:40,816 INFO WAV SENT, size 1903663
+2024-10-18 01:25:33,358 INFO Initializing Server...
+2024-10-18 01:25:33,361 INFO Initializing ASR Service...
+2024-10-18 01:25:35,391 INFO 正在初始化通义千问服务...
+2024-10-18 01:25:35,392 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:25:35,393 INFO 使用提供的 API 密钥。
+2024-10-18 01:25:35,393 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:25:35,393 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:25:36,152 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:25:36,156 INFO Initializing Sentiment Engine...
+2024-10-18 01:25:37,602 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:26:56,495 INFO Initializing Server...
+2024-10-18 01:26:56,498 INFO Initializing ASR Service...
+2024-10-18 01:26:58,608 INFO 正在初始化通义千问服务...
+2024-10-18 01:26:58,608 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:26:58,609 INFO 使用提供的 API 密钥。
+2024-10-18 01:26:58,609 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:26:58,610 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:26:59,356 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:26:59,359 INFO Initializing Sentiment Engine...
+2024-10-18 01:27:00,384 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:30:21,113 INFO Initializing Server...
+2024-10-18 01:30:21,116 INFO Initializing ASR Service...
+2024-10-18 01:30:23,188 INFO 正在初始化通义千问服务...
+2024-10-18 01:30:23,188 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:30:23,189 INFO 使用提供的 API 密钥。
+2024-10-18 01:30:23,189 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:30:23,190 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:30:23,883 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:30:23,886 INFO Initializing Sentiment Engine...
+2024-10-18 01:30:24,935 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:34:18,190 INFO Initializing Server...
+2024-10-18 01:34:22,626 INFO Initializing ASR Service...
+2024-10-18 01:34:24,672 INFO 正在初始化通义千问服务...
+2024-10-18 01:34:24,672 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:34:24,673 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 01:34:24,673 INFO 正在使用默认基础 URL。
+2024-10-18 01:34:24,673 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:34:24,674 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:34:25,400 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:34:25,403 INFO Initializing Sentiment Engine...
+2024-10-18 01:34:26,407 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:34:53,949 INFO Initializing Server...
+2024-10-18 01:34:53,953 INFO Initializing ASR Service...
+2024-10-18 01:35:22,950 INFO Initializing Server...
+2024-10-18 01:35:22,953 INFO Initializing ASR Service...
+2024-10-18 01:37:13,495 INFO Initializing Server...
+2024-10-18 01:37:13,499 INFO Initializing ASR Service...
+2024-10-18 01:37:15,541 INFO 正在初始化通义千问服务...
+2024-10-18 01:37:15,541 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:37:15,542 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 01:37:15,542 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 01:37:15,543 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:37:15,543 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:37:16,248 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:37:16,252 INFO Initializing Sentiment Engine...
+2024-10-18 01:37:17,620 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:37:39,303 INFO Connected by ('10.1.0.173', 37364)
+2024-10-18 01:37:45,368 INFO WAV file received and saved.
+2024-10-18 01:37:46,838 INFO ASR Result: ['你好啊你是谁']. time used 0.11.
+2024-10-18 01:37:48,564 INFO VITS Synth Done, time used 0.92
+2024-10-18 01:37:48,579 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:49,080 INFO WAV SENT, size 72751
+2024-10-18 01:37:49,274 INFO VITS Synth Done, time used 0.09
+2024-10-18 01:37:49,289 INFO Sentiment Engine Infer: 2
+2024-10-18 01:37:49,790 INFO WAV SENT, size 2607
+2024-10-18 01:37:49,974 INFO VITS Synth Done, time used 0.08
+2024-10-18 01:37:49,989 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:50,490 INFO WAV SENT, size 39471
+2024-10-18 01:37:50,824 INFO VITS Synth Done, time used 0.23
+2024-10-18 01:37:50,839 INFO Sentiment Engine Infer: 4
+2024-10-18 01:37:51,341 INFO WAV SENT, size 76847
+2024-10-18 01:37:51,529 INFO VITS Synth Done, time used 0.09
+2024-10-18 01:37:51,543 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:52,045 INFO WAV SENT, size 70191
+2024-10-18 01:37:52,246 INFO VITS Synth Done, time used 0.10
+2024-10-18 01:37:52,262 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:52,764 INFO WAV SENT, size 201263
+2024-10-18 01:37:53,058 INFO VITS Synth Done, time used 0.19
+2024-10-18 01:37:53,072 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:53,574 INFO WAV SENT, size 151599
+2024-10-18 01:37:53,872 INFO VITS Synth Done, time used 0.20
+2024-10-18 01:37:53,887 INFO Sentiment Engine Infer: 0
+2024-10-18 01:37:54,388 INFO WAV SENT, size 175663
+2024-10-18 01:37:54,644 INFO VITS Synth Done, time used 0.15
+2024-10-18 01:37:54,659 INFO Sentiment Engine Infer: 0
+2024-10-18 01:40:51,140 INFO Initializing Server...
+2024-10-18 01:40:51,143 INFO Initializing ASR Service...
+2024-10-18 01:40:53,495 INFO 正在初始化通义千问服务...
+2024-10-18 01:40:53,496 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:40:53,496 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 01:40:53,497 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 01:40:53,497 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:40:53,497 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:40:54,214 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:40:54,218 INFO Initializing Sentiment Engine...
+2024-10-18 01:40:55,306 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:41:00,357 INFO Connected by ('10.1.0.173', 43592)
+2024-10-18 01:41:03,393 INFO WAV file received and saved.
+2024-10-18 01:41:04,648 INFO ASR Result: ['你好']. time used 0.08.
+2024-10-18 01:41:06,428 INFO VITS Synth Done, time used 1.02
+2024-10-18 01:41:06,442 INFO Sentiment Engine Infer: 0
+2024-10-18 01:41:06,944 INFO WAV SENT, size 73775
+2024-10-18 01:41:07,133 INFO VITS Synth Done, time used 0.09
+2024-10-18 01:41:07,148 INFO Sentiment Engine Infer: 2
+2024-10-18 01:41:07,650 INFO WAV SENT, size 2607
+2024-10-18 01:41:07,859 INFO VITS Synth Done, time used 0.11
+2024-10-18 01:41:07,873 INFO Sentiment Engine Infer: 4
+2024-10-18 01:41:08,374 INFO WAV SENT, size 38447
+2024-10-18 01:41:08,615 INFO VITS Synth Done, time used 0.14
+2024-10-18 01:41:08,631 INFO Sentiment Engine Infer: 0
+2024-10-18 01:41:09,132 INFO WAV SENT, size 57903
+2024-10-18 01:41:09,425 INFO VITS Synth Done, time used 0.19
+2024-10-18 01:41:09,440 INFO Sentiment Engine Infer: 4
+2024-10-18 01:41:09,941 INFO WAV SENT, size 155183
+2024-10-18 01:41:10,241 INFO VITS Synth Done, time used 0.20
+2024-10-18 01:41:10,257 INFO Sentiment Engine Infer: 4
+2024-10-18 01:41:10,758 INFO WAV SENT, size 166447
+2024-10-18 01:41:11,060 INFO VITS Synth Done, time used 0.20
+2024-10-18 01:41:11,074 INFO Sentiment Engine Infer: 4
+2024-10-18 01:41:11,576 INFO WAV SENT, size 183343
+2024-10-18 01:41:11,769 INFO VITS Synth Done, time used 0.09
+2024-10-18 01:41:11,785 INFO Sentiment Engine Infer: 0
+2024-10-18 01:41:12,286 INFO WAV SENT, size 130095
+2024-10-18 01:41:12,474 INFO VITS Synth Done, time used 0.09
+2024-10-18 01:41:12,489 INFO Sentiment Engine Infer: 4
+2024-10-18 01:41:12,990 INFO WAV SENT, size 87087
+2024-10-18 01:41:13,691 INFO Stream finished.
+2024-10-18 01:41:58,778 INFO Initializing Server...
+2024-10-18 01:41:58,781 INFO Initializing ASR Service...
+2024-10-18 01:42:01,399 INFO 正在初始化通义千问服务...
+2024-10-18 01:42:01,400 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 01:42:01,400 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 01:42:01,402 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 01:42:01,402 INFO 通义千问 API 机器人已初始化。
+2024-10-18 01:42:01,402 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 01:42:02,194 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 01:42:02,198 INFO Initializing Sentiment Engine...
+2024-10-18 01:42:03,260 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 01:42:17,499 INFO Connected by ('10.1.0.173', 49336)
+2024-10-18 01:42:22,029 INFO WAV file received and saved.
+2024-10-18 01:42:23,320 INFO ASR Result: ['你好啊我是']. time used 0.10.
+2024-10-18 01:42:25,845 INFO 通义千问响应：您好！看起来您的消息可能没有发送完整。请问您是想要介绍自己，还是有其他问题需要帮助解决？请告诉我更多详细信息，这样我才能更好地为您提供支持。，耗时 2.53 秒
+2024-10-18 01:42:27,148 INFO VITS Synth Done, time used 1.30
+2024-10-18 01:42:27,191 INFO Sentiment Engine Infer: 0
+2024-10-18 01:42:27,693 INFO WAV SENT, size 1134639
+2024-10-18 12:38:58,996 INFO Initializing Server...
+2024-10-18 12:38:58,998 INFO Initializing ASR Service...
+2024-10-18 12:39:01,978 INFO 正在初始化通义千问服务...
+2024-10-18 12:39:06,340 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 12:39:06,348 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 12:39:06,349 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 12:39:06,349 INFO 通义千问 API 机器人已初始化。
+2024-10-18 12:39:06,349 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 12:39:07,641 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 12:39:07,644 INFO Initializing Sentiment Engine...
+2024-10-18 12:39:09,071 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 12:39:14,333 INFO Connected by ('10.1.0.173', 45196)
+2024-10-18 12:39:20,363 INFO WAV file received and saved.
+2024-10-18 12:39:23,093 INFO ASR Result: ['你是谁']. time used 0.08.
+2024-10-18 12:39:26,318 INFO 通义千问响应：我是您的数字助手，专门设计来帮助您优化工作流程、解决技术问题以及提升生产效率和产品质量。通过提供操作指南、培训材料等支持，我旨在成为您工作中的得力伙伴。，耗时 3.23 秒
+2024-10-18 12:39:28,193 INFO VITS Synth Done, time used 1.88
+2024-10-18 12:39:28,233 INFO Sentiment Engine Infer: 0
+2024-10-18 12:39:28,735 INFO WAV SENT, size 1266223
+2024-10-18 12:39:55,799 ERROR [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2024-10-18 12:39:55,800 ERROR Traceback (most recent call last):
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 104, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalijerry\PycharmProjects\Digital_Life_Server_renew\SocketServer.py", line 162, in __receive_file
+    self.conn.send(b'sb')
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+2024-10-18 12:39:55,802 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 12:51:07,301 INFO Initializing Server...
+2024-10-18 12:51:07,304 INFO Initializing ASR Service...
+2024-10-18 12:51:09,697 INFO 正在初始化通义千问服务...
+2024-10-18 12:51:09,697 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 12:51:09,697 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 12:51:09,698 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 12:51:09,698 INFO 通义千问 API 机器人已初始化。
+2024-10-18 12:51:09,698 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 12:51:10,876 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 12:51:10,879 INFO Initializing Sentiment Engine...
+2024-10-18 12:51:12,041 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 12:51:31,939 INFO Connected by ('10.1.0.173', 48040)
+2024-10-18 12:51:38,473 INFO WAV file received and saved.
+2024-10-18 12:51:41,489 INFO ASR Result: ['你会玩原神吗']. time used 0.11.
+2024-10-18 12:51:43,614 INFO 通义千问响应：我不实际玩游戏，但我可以提供原神的游戏攻略、角色培养建议和任务指南等信息，帮助你更好地享受游戏。如果你有任何关于原神的问题，都可以问我！，耗时 2.12 秒
+2024-10-18 12:51:44,919 INFO VITS Synth Done, time used 1.30
+2024-10-18 12:51:44,962 INFO Sentiment Engine Infer: 0
+2024-10-18 12:51:45,463 INFO WAV SENT, size 989231
+2024-10-18 12:52:24,135 ERROR [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2024-10-18 12:52:24,136 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 104, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 162, in __receive_file
+    self.conn.send(b'sb')
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+2024-10-18 12:52:24,137 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 12:56:53,648 INFO Initializing Server...
+2024-10-18 12:56:53,651 INFO Initializing ASR Service...
+2024-10-18 12:56:55,875 INFO 正在初始化通义千问服务...
+2024-10-18 12:56:55,876 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 12:56:55,876 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 12:56:55,877 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 12:56:55,877 INFO 通义千问 API 机器人已初始化。
+2024-10-18 12:56:55,877 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 12:56:56,634 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 12:56:56,637 INFO Initializing Sentiment Engine...
+2024-10-18 12:56:58,163 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 13:36:36,338 INFO Initializing Server...
+2024-10-18 13:36:36,342 INFO Initializing ASR Service...
+2024-10-18 13:36:39,419 INFO 正在初始化通义千问服务...
+2024-10-18 13:36:39,420 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 13:36:39,428 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 13:36:39,429 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 13:36:39,430 INFO 通义千问 API 机器人已初始化。
+2024-10-18 13:36:39,430 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 13:36:40,835 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 13:36:40,839 INFO Initializing Sentiment Engine...
+2024-10-18 13:36:42,443 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 13:36:45,000 INFO Connected by ('10.1.0.173', 37210)
+2024-10-18 13:36:58,569 INFO WAV file received and saved.
+2024-10-18 13:37:02,442 INFO ASR Result: ['你好啊可以帮我完成工业生产的项目吗']. time used 0.17.
+2024-10-18 13:37:04,788 INFO 通义千问响应：当然可以！请告诉我项目的具体需求，比如目标、规模和遇到的挑战等，这样我可以更好地为您提供操作规程、培训材料以及优化建议。，耗时 2.35 秒
+2024-10-18 13:37:06,094 INFO VITS Synth Done, time used 1.31
+2024-10-18 13:37:06,132 INFO Sentiment Engine Infer: 0
+2024-10-18 13:37:06,634 INFO WAV SENT, size 984111
+2024-10-18 13:38:28,594 INFO WAV file received and saved.
+2024-10-18 13:38:28,760 INFO ASR Result: ['那么我想问一下你给我推荐一张显卡可以吗']. time used 0.15.
+2024-10-18 13:38:31,594 INFO 通义千问响应：当然可以。为了给您推荐合适的显卡，请告诉我您主要用电脑做什么（如游戏、图形设计、视频编辑等）以及您的预算范围。这样我能更准确地为您挑选适合的显卡。，耗时 2.83 秒
+2024-10-18 13:38:32,071 INFO VITS Synth Done, time used 0.48
+2024-10-18 13:38:32,114 INFO Sentiment Engine Infer: 4
+2024-10-18 13:38:32,615 INFO WAV SENT, size 1070127
+2024-10-18 13:38:49,588 INFO WAV file received and saved.
+2024-10-18 13:38:49,712 INFO ASR Result: ['没有预算上限我主要做bl@@e']. time used 0.11.
+2024-10-18 13:38:54,522 INFO 通义千问响应：您提到的"bl@"可能是指"蓝牙"（Bluetooth）相关的产品或项目。如果您的主要目标是开发蓝牙设备或应用，并且没有预算限制，建议首先明确具体需求和应用场景，比如智能穿戴、智能家居等。接着，可以考虑投资高质量的研发团队，使用先进的开发工具和技术，同时保证充足的测试资源来确保产品的稳定性和兼容性。此外，还可以探索最新的蓝牙技术标准，如Bluetooth 5.0及以上版本的新特性，以提供更优秀的用户体验。，耗时 4.81 秒
+2024-10-18 13:38:55,059 INFO VITS Synth Done, time used 0.54
+2024-10-18 13:38:55,160 INFO Sentiment Engine Infer: 0
+2024-10-18 13:38:55,662 INFO WAV SENT, size 2829359
+2024-10-18 13:39:31,588 INFO WAV file received and saved.
+2024-10-18 13:39:31,672 INFO ASR Result: ['你知道极客湾吗']. time used 0.07.
+2024-10-18 13:39:34,480 INFO 通义千问响应：极客湾是一个知名的科技评测频道，主要在B站和YouTube上发布内容。他们以专业的硬件评测、电脑装机指南和技术分析闻名，深受科技爱好者喜爱。，耗时 2.81 秒
+2024-10-18 13:39:34,838 INFO VITS Synth Done, time used 0.36
+2024-10-18 13:39:34,868 INFO Sentiment Engine Infer: 0
+2024-10-18 13:39:35,369 INFO WAV SENT, size 1020975
+2024-10-18 16:19:32,488 INFO Initializing Server...
+2024-10-18 16:19:32,490 INFO Initializing ASR Service...
+2024-10-18 16:19:35,657 INFO 正在初始化通义千问服务...
+2024-10-18 16:19:35,658 INFO chatGPT prompt: yunfei4.txt
+2024-10-18 16:19:35,658 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-18 16:19:35,658 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-18 16:19:35,659 INFO 通义千问 API 机器人已初始化。
+2024-10-18 16:19:35,659 INFO Initializing TTS Service for character_yunfei...
+2024-10-18 16:19:36,490 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-18 16:19:48,022 INFO Initializing Sentiment Engine...
+2024-10-18 16:19:49,531 INFO Server is listening on 10.1.0.189:38438...
+2024-10-18 16:19:58,264 INFO Connected by ('10.1.0.173', 43144)
+2024-10-18 16:20:10,793 INFO WAV file received and saved.
+2024-10-18 16:20:12,063 INFO ASR Result: ['你好啊你是谁']. time used 0.09.
+2024-10-18 16:20:14,764 INFO 通义千问响应：你好！我是你的数字人助手，专门帮助解答问题、提供操作指导和优化生产计划等。有什么我可以帮你的？，耗时 2.70 秒
+2024-10-18 16:20:16,140 INFO VITS Synth Done, time used 1.38
+2024-10-18 16:20:16,167 INFO Sentiment Engine Infer: 0
+2024-10-18 16:20:16,668 INFO WAV SENT, size 776751
+2024-10-18 16:20:37,795 INFO WAV file received and saved.
+2024-10-18 16:20:37,874 INFO ASR Result: ['你能做什么']. time used 0.07.
+2024-10-18 16:20:40,096 INFO 通义千问响应：我可以提供操作规程、培训材料和故障排除指导，优化生产计划和资源分配。通过数据可视化和详细报告，帮助您做出更明智的决策，提升生产效率和产品质量。，耗时 2.22 秒
+2024-10-18 16:20:40,664 INFO VITS Synth Done, time used 0.57
+2024-10-18 16:20:40,703 INFO Sentiment Engine Infer: 0
+2024-10-18 16:20:41,205 INFO WAV SENT, size 1166895
+2024-10-19 17:12:32,706 INFO Initializing Server...
+2024-10-19 17:12:32,707 INFO Initializing ASR Service...
+2024-10-19 17:12:35,676 INFO 正在初始化通义千问服务...
+2024-10-19 17:12:35,677 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:12:35,685 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:12:35,686 ERROR API 密钥未找到。
+2024-10-19 17:12:35,691 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:12:51,024 INFO Initializing Server...
+2024-10-19 17:12:51,026 INFO Initializing ASR Service...
+2024-10-19 17:12:53,437 INFO 正在初始化通义千问服务...
+2024-10-19 17:12:53,438 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:12:53,439 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:12:53,439 ERROR API 密钥未找到。
+2024-10-19 17:12:53,440 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:13:24,967 INFO Initializing Server...
+2024-10-19 17:13:24,969 INFO Initializing ASR Service...
+2024-10-19 17:13:27,019 INFO 正在初始化通义千问服务...
+2024-10-19 17:13:27,019 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:13:27,020 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:13:27,020 ERROR API 密钥未找到。
+2024-10-19 17:13:27,021 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:14:14,028 INFO Initializing Server...
+2024-10-19 17:14:14,030 INFO Initializing ASR Service...
+2024-10-19 17:14:16,071 INFO 正在初始化通义千问服务...
+2024-10-19 17:14:16,071 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:14:16,072 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:14:16,072 ERROR API 密钥未找到。
+2024-10-19 17:14:16,073 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:14:48,279 INFO Initializing Server...
+2024-10-19 17:14:48,282 INFO Initializing ASR Service...
+2024-10-19 17:14:50,302 INFO 正在初始化通义千问服务...
+2024-10-19 17:14:50,302 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:14:50,302 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:14:50,303 ERROR API 密钥未找到。
+2024-10-19 17:14:50,303 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:15:06,587 INFO Initializing Server...
+2024-10-19 17:15:06,590 INFO Initializing ASR Service...
+2024-10-19 17:15:08,610 INFO 正在初始化通义千问服务...
+2024-10-19 17:15:08,611 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:15:08,611 ERROR API 密钥未找到。请设置 DASHSCOPE_API_KEY 环境变量或通过 --APIKey 命令行参数提供。
+2024-10-19 17:15:08,612 ERROR API 密钥未找到。
+2024-10-19 17:15:08,612 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 199, in <module>
+    s = Server(args)
+        ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 86, in __init__
+    self.chat_gpt = GPTService.GPTService(args)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 27, in __init__
+    raise ValueError("API 密钥未找到。")
+ValueError: API 密钥未找到。
+
+2024-10-19 17:15:17,885 INFO Initializing Server...
+2024-10-19 17:15:17,888 INFO Initializing ASR Service...
+2024-10-19 17:15:19,889 INFO 正在初始化通义千问服务...
+2024-10-19 17:15:19,890 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:15:19,890 INFO 正在使用 OpenAI API 基础 URL：https://127.0.0.1:8000/v1
+2024-10-19 17:15:19,891 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:15:19,891 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:15:19,891 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:15:21,200 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:15:21,203 INFO Initializing Sentiment Engine...
+2024-10-19 17:15:22,627 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:15:40,302 INFO Connected by ('10.1.0.173', 37330)
+2024-10-19 17:15:44,866 INFO WAV file received and saved.
+2024-10-19 17:15:47,584 INFO ASR Result: ['你好啊你是谁']. time used 0.10.
+2024-10-19 17:15:47,794 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:15:48,002 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:15:48,207 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')))
+2024-10-19 17:15:49,851 INFO VITS Synth Done, time used 1.64
+2024-10-19 17:15:49,903 INFO Sentiment Engine Infer: 4
+2024-10-19 17:15:50,406 INFO WAV SENT, size 1117231
+2024-10-19 17:21:41,810 INFO Initializing Server...
+2024-10-19 17:21:41,813 INFO Initializing ASR Service...
+2024-10-19 17:21:43,861 INFO 正在初始化通义千问服务...
+2024-10-19 17:21:43,861 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:21:43,862 INFO 正在使用 OpenAI API 基础 URL：https://127.0.0.1:8000/v1
+2024-10-19 17:21:43,862 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:21:43,862 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:21:43,862 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:21:44,560 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:21:44,563 INFO Initializing Sentiment Engine...
+2024-10-19 17:21:45,524 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:22:01,800 INFO Connected by ('10.1.0.173', 49480)
+2024-10-19 17:22:06,349 INFO WAV file received and saved.
+2024-10-19 17:22:07,576 INFO ASR Result: ['你好啊你是谁']. time used 0.09.
+2024-10-19 17:22:07,786 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:22:07,992 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:22:08,178 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+2024-10-19 17:22:09,373 INFO VITS Synth Done, time used 1.19
+2024-10-19 17:22:09,430 INFO Sentiment Engine Infer: 4
+2024-10-19 17:22:09,932 INFO WAV SENT, size 1248303
+2024-10-19 17:28:12,338 INFO Initializing Server...
+2024-10-19 17:28:12,341 INFO Initializing ASR Service...
+2024-10-19 17:28:14,350 INFO 正在初始化通义千问服务...
+2024-10-19 17:28:14,351 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:28:14,351 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 17:28:14,351 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:28:14,352 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:28:14,352 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:28:15,018 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:28:15,021 INFO Initializing Sentiment Engine...
+2024-10-19 17:28:16,016 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:28:22,936 INFO Connected by ('10.1.0.173', 48158)
+2024-10-19 17:28:27,477 INFO WAV file received and saved.
+2024-10-19 17:28:28,729 INFO ASR Result: ['太可能你好啊你是谁']. time used 0.10.
+2024-10-19 17:28:31,064 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:28:33,372 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:28:35,687 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='api.2k2.cc', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-10-19 17:28:36,812 INFO VITS Synth Done, time used 1.12
+2024-10-19 17:28:36,874 INFO Sentiment Engine Infer: 4
+2024-10-19 17:28:37,375 INFO WAV SENT, size 1079343
+2024-10-19 17:29:20,254 INFO Initializing Server...
+2024-10-19 17:29:20,256 INFO Initializing ASR Service...
+2024-10-19 17:29:22,258 INFO 正在初始化通义千问服务...
+2024-10-19 17:29:22,259 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:29:22,259 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1/chat/completions
+2024-10-19 17:29:22,260 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:29:22,260 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:29:22,260 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:29:22,899 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:29:22,903 INFO Initializing Sentiment Engine...
+2024-10-19 17:29:23,857 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:29:32,721 INFO Connected by ('10.1.0.173', 46996)
+2024-10-19 17:29:36,265 INFO WAV file received and saved.
+2024-10-19 17:29:37,479 INFO ASR Result: ['你好啊你是谁']. time used 0.09.
+2024-10-19 17:29:39,814 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions/chat/completions
+2024-10-19 17:29:42,149 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions/chat/completions
+2024-10-19 17:29:44,494 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='api.2k2.cc', port=8000): Max retries exceeded with url: /v1/chat/completions/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-10-19 17:29:45,608 INFO VITS Synth Done, time used 1.11
+2024-10-19 17:29:45,669 INFO Sentiment Engine Infer: 4
+2024-10-19 17:29:46,171 INFO WAV SENT, size 1128495
+2024-10-19 17:41:09,300 INFO Initializing Server...
+2024-10-19 17:41:09,303 INFO Initializing ASR Service...
+2024-10-19 17:41:11,321 INFO 正在初始化通义千问服务...
+2024-10-19 17:41:11,321 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:41:11,325 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc/v1
+2024-10-19 17:41:11,326 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:41:11,326 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:41:11,326 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:41:12,047 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:41:12,051 INFO Initializing Sentiment Engine...
+2024-10-19 17:41:13,067 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:41:28,319 INFO Connected by ('10.1.0.173', 37480)
+2024-10-19 17:41:31,843 INFO WAV file received and saved.
+2024-10-19 17:41:33,954 INFO ASR Result: ['你好啊你是谁']. time used 0.08.
+2024-10-19 17:41:36,290 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:41:38,604 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))': /v1/chat/completions
+2024-10-19 17:41:40,921 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='api.2k2.cc', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-10-19 17:41:42,000 INFO VITS Synth Done, time used 1.08
+2024-10-19 17:41:42,043 INFO Sentiment Engine Infer: 4
+2024-10-19 17:41:42,546 INFO WAV SENT, size 1126447
+2024-10-19 17:42:01,870 INFO Initializing Server...
+2024-10-19 17:42:02,130 INFO Initializing ASR Service...
+2024-10-19 17:42:04,124 INFO 正在初始化通义千问服务...
+2024-10-19 17:42:04,125 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:42:04,125 INFO 正在使用 OpenAI API 基础 URL：https://localhost:8000/v1/
+2024-10-19 17:42:04,125 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:42:04,125 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:42:04,126 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:42:04,808 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:42:04,811 INFO Initializing Sentiment Engine...
+2024-10-19 17:42:05,789 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:42:15,767 INFO Connected by ('10.1.0.173', 49138)
+2024-10-19 17:42:18,788 INFO WAV file received and saved.
+2024-10-19 17:42:19,988 INFO ASR Result: ['你是谁呀']. time used 0.08.
+2024-10-19 17:42:22,228 WARNING Certificate did not match expected hostname: localhost. Certificate: {'subject': ((('commonName', '*.2k2.cc'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R10'),)), 'version': 3, 'serialNumber': '04C35233C76BE9EF07786B2BFAC42B8B3636', 'notBefore': 'Oct  9 16:53:25 2024 GMT', 'notAfter': 'Jan  7 16:53:24 2025 GMT', 'subjectAltName': (('DNS', '*.2k2.cc'),), 'OCSP': ('http://r10.o.lencr.org',), 'caIssuers': ('http://r10.i.lencr.org/',)}
+2024-10-19 17:42:22,228 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(CertificateError("hostname 'localhost' doesn't match '*.2k2.cc'"))': /v1//chat/completions
+2024-10-19 17:42:24,459 WARNING Certificate did not match expected hostname: localhost. Certificate: {'subject': ((('commonName', '*.2k2.cc'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R10'),)), 'version': 3, 'serialNumber': '04C35233C76BE9EF07786B2BFAC42B8B3636', 'notBefore': 'Oct  9 16:53:25 2024 GMT', 'notAfter': 'Jan  7 16:53:24 2025 GMT', 'subjectAltName': (('DNS', '*.2k2.cc'),), 'OCSP': ('http://r10.o.lencr.org',), 'caIssuers': ('http://r10.i.lencr.org/',)}
+2024-10-19 17:42:24,459 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(CertificateError("hostname 'localhost' doesn't match '*.2k2.cc'"))': /v1//chat/completions
+2024-10-19 17:42:26,694 WARNING Certificate did not match expected hostname: localhost. Certificate: {'subject': ((('commonName', '*.2k2.cc'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R10'),)), 'version': 3, 'serialNumber': '04C35233C76BE9EF07786B2BFAC42B8B3636', 'notBefore': 'Oct  9 16:53:25 2024 GMT', 'notAfter': 'Jan  7 16:53:24 2025 GMT', 'subjectAltName': (('DNS', '*.2k2.cc'),), 'OCSP': ('http://r10.o.lencr.org',), 'caIssuers': ('http://r10.i.lencr.org/',)}
+2024-10-19 17:42:26,694 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1//chat/completions (Caused by SSLError(CertificateError("hostname 'localhost' doesn't match '*.2k2.cc'")))
+2024-10-19 17:42:27,738 INFO VITS Synth Done, time used 1.04
+2024-10-19 17:42:27,786 INFO Sentiment Engine Infer: 4
+2024-10-19 17:42:28,287 INFO WAV SENT, size 995887
+2024-10-19 17:45:17,408 INFO Initializing Server...
+2024-10-19 17:45:18,779 INFO Initializing ASR Service...
+2024-10-19 17:45:20,830 INFO 正在初始化通义千问服务...
+2024-10-19 17:45:20,830 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:45:20,831 INFO 正在使用 OpenAI API 基础 URL：https://127.0.0.1:8000/v1/
+2024-10-19 17:45:20,831 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:45:20,831 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:45:20,831 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:45:21,490 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:45:21,493 INFO Initializing Sentiment Engine...
+2024-10-19 17:45:22,459 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:45:26,228 INFO Connected by ('10.1.0.173', 39972)
+2024-10-19 17:45:30,701 INFO WAV file received and saved.
+2024-10-19 17:45:31,907 INFO ASR Result: ['你好啊']. time used 0.09.
+2024-10-19 17:45:32,116 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:45:32,324 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:45:32,513 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /v1//chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+2024-10-19 17:45:33,720 INFO VITS Synth Done, time used 1.21
+2024-10-19 17:45:33,780 INFO Sentiment Engine Infer: 4
+2024-10-19 17:45:34,282 INFO WAV SENT, size 1255983
+2024-10-19 17:50:26,669 INFO Initializing Server...
+2024-10-19 17:50:26,671 INFO Initializing ASR Service...
+2024-10-19 17:50:28,672 INFO 正在初始化通义千问服务...
+2024-10-19 17:50:28,672 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:50:28,673 INFO 正在使用 OpenAI API 基础 URL：https://127.0.0.1:8000/v1/
+2024-10-19 17:50:28,673 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:50:28,673 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:50:28,673 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:50:29,334 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:50:29,337 INFO Initializing Sentiment Engine...
+2024-10-19 17:50:30,295 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:50:31,302 INFO Connected by ('10.1.0.173', 44770)
+2024-10-19 17:50:35,348 INFO WAV file received and saved.
+2024-10-19 17:50:36,572 INFO ASR Result: ['你好啊你是谁啊']. time used 0.08.
+2024-10-19 17:50:36,781 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:50:36,970 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:50:37,167 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /v1//chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+2024-10-19 17:50:38,247 INFO VITS Synth Done, time used 1.08
+2024-10-19 17:50:38,292 INFO Sentiment Engine Infer: 4
+2024-10-19 17:50:38,793 INFO WAV SENT, size 1240111
+2024-10-19 17:54:25,262 INFO Initializing Server...
+2024-10-19 17:54:25,418 INFO Initializing ASR Service...
+2024-10-19 17:54:27,421 INFO 正在初始化通义千问服务...
+2024-10-19 17:54:27,422 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 17:54:27,422 INFO 正在使用 OpenAI API 基础 URL：https://127.0.0.1:8000/v1/
+2024-10-19 17:54:27,422 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 17:54:27,423 INFO 通义千问 API 机器人已初始化。
+2024-10-19 17:54:27,423 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 17:54:28,087 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 17:54:28,090 INFO Initializing Sentiment Engine...
+2024-10-19 17:54:29,091 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 17:54:30,744 INFO Connected by ('10.1.0.173', 41772)
+2024-10-19 17:54:33,778 INFO WAV file received and saved.
+2024-10-19 17:54:34,987 INFO ASR Result: ['你好啊你是谁呀']. time used 0.08.
+2024-10-19 17:54:35,196 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:54:35,398 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)'))': /v1//chat/completions
+2024-10-19 17:54:35,604 ERROR 通义千问 API 错误：Error communicating with OpenAI: HTTPSConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /v1//chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+2024-10-19 17:54:36,781 INFO VITS Synth Done, time used 1.18
+2024-10-19 17:54:36,833 INFO Sentiment Engine Infer: 4
+2024-10-19 17:54:37,335 INFO WAV SENT, size 1257007
+2024-10-19 18:07:33,227 INFO Initializing Server...
+2024-10-19 18:07:33,230 INFO Initializing ASR Service...
+2024-10-19 18:07:35,330 INFO 正在初始化通义千问服务...
+2024-10-19 18:07:35,332 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:07:35,335 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1/
+2024-10-19 18:07:35,335 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:07:35,335 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:07:35,335 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:07:36,004 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:07:36,007 INFO Initializing Sentiment Engine...
+2024-10-19 18:07:36,992 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:07:45,570 INFO Connected by ('10.1.0.173', 38394)
+2024-10-19 18:07:50,160 INFO WAV file received and saved.
+2024-10-19 18:07:51,394 INFO ASR Result: ['你好啊你好啊你是谁啊']. time used 0.11.
+2024-10-19 18:07:51,901 ERROR 通义千问 API 错误：Invalid response object from API: '{"detail":"Not Found"}' (HTTP response code was 404)
+2024-10-19 18:07:53,099 INFO VITS Synth Done, time used 1.20
+2024-10-19 18:07:53,126 INFO Sentiment Engine Infer: 4
+2024-10-19 18:07:53,627 INFO WAV SENT, size 499247
+2024-10-19 18:08:11,450 INFO Initializing Server...
+2024-10-19 18:08:11,452 INFO Initializing ASR Service...
+2024-10-19 18:08:13,546 INFO 正在初始化通义千问服务...
+2024-10-19 18:08:13,547 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:08:13,547 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:08:13,548 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:08:13,548 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:08:13,548 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:08:22,552 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:08:22,555 INFO Initializing Sentiment Engine...
+2024-10-19 18:08:23,514 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:08:26,777 INFO Connected by ('10.1.0.173', 46890)
+2024-10-19 18:08:33,809 INFO WAV file received and saved.
+2024-10-19 18:08:35,047 INFO ASR Result: ['你好啊你好你是谁']. time used 0.10.
+2024-10-19 18:08:35,551 ERROR 通义千问 API 错误：Invalid response object from API: '{"message":"`qwen-max` is not in the model_list: `[\'llama3_2-1b-instruct\']`.","object":"error"}' (HTTP response code was 400)
+2024-10-19 18:08:36,680 INFO VITS Synth Done, time used 1.13
+2024-10-19 18:08:36,731 INFO Sentiment Engine Infer: 4
+2024-10-19 18:08:37,232 INFO WAV SENT, size 715823
+2024-10-19 18:14:25,768 ERROR name 'true' is not defined
+2024-10-19 18:14:25,768 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    args = parse_args()
+           ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 51, in parse_args
+    parser.add_argument("--model", type=str, nargs='?', required=true)
+                                                                 ^^^^
+NameError: name 'true' is not defined. Did you mean: 'True'?
+
+2024-10-19 18:14:57,399 ERROR name 'true' is not defined
+2024-10-19 18:14:57,400 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 198, in <module>
+    args = parse_args()
+           ^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 51, in parse_args
+    parser.add_argument("--model", type=str, nargs='?', required=true)
+                                                                 ^^^^
+NameError: name 'true' is not defined. Did you mean: 'True'?
+
+2024-10-19 18:15:27,383 INFO Initializing Server...
+2024-10-19 18:15:27,386 INFO Initializing ASR Service...
+2024-10-19 18:15:29,385 INFO 正在初始化通义千问服务...
+2024-10-19 18:15:29,386 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:15:29,387 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:15:29,387 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:15:29,387 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:15:29,388 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:15:30,061 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:15:30,065 INFO Initializing Sentiment Engine...
+2024-10-19 18:15:31,030 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:15:38,442 INFO Connected by ('10.1.0.173', 37400)
+2024-10-19 18:15:49,492 INFO WAV file received and saved.
+2024-10-19 18:15:50,708 INFO ASR Result: ['哥们你玩元神吗']. time used 0.07.
+2024-10-19 18:15:50,708 ERROR 未知错误: name 'api_model' is not defined
+Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\GPT\GPTService.py", line 47, in ask
+    model=api_model,  # 指定模型
+          ^^^^^^^^^
+NameError: name 'api_model' is not defined
+2024-10-19 18:15:51,767 INFO VITS Synth Done, time used 1.06
+2024-10-19 18:15:51,782 INFO Sentiment Engine Infer: 5
+2024-10-19 18:15:52,284 INFO WAV SENT, size 157743
+2024-10-19 18:17:08,817 INFO Initializing Server...
+2024-10-19 18:17:08,820 INFO Initializing ASR Service...
+2024-10-19 18:17:10,826 INFO 正在初始化通义千问服务...
+2024-10-19 18:17:10,827 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:17:10,827 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:17:10,827 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:17:10,828 INFO 已指定模型: llama3_2-1b-instruct
+2024-10-19 18:17:10,828 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:17:10,828 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:17:11,500 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:17:11,503 INFO Initializing Sentiment Engine...
+2024-10-19 18:17:12,474 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:17:15,485 INFO Connected by ('10.1.0.173', 42742)
+2024-10-19 18:17:18,519 INFO WAV file received and saved.
+2024-10-19 18:17:19,710 INFO ASR Result: ['你好啊你是谁']. time used 0.08.
+2024-10-19 18:17:21,139 INFO 通义千问响应：我是数字人助手，目前正在为您提供支持和解决问题。，耗时 1.43 秒
+2024-10-19 18:17:22,006 INFO VITS Synth Done, time used 0.87
+2024-10-19 18:17:22,025 INFO Sentiment Engine Infer: 0
+2024-10-19 18:17:22,526 INFO WAV SENT, size 485423
+2024-10-19 18:18:12,528 INFO WAV file received and saved.
+2024-10-19 18:18:15,109 INFO ASR Result: ['操你妈']. time used 0.08.
+2024-10-19 18:18:17,049 INFO 通义千问响应：我理解你在这句话中表达了你对生产过程中的某个问题的不满。作为数字人助手，我可以帮助你解决问题和优化生产过程。
+
+你想告诉我操你妈是谁吗？或是你想问什么问题吗？我在这里来帮助你。，耗时 1.94 秒
+2024-10-19 18:18:17,224 INFO VITS Synth Done, time used 0.18
+2024-10-19 18:18:17,281 INFO Sentiment Engine Infer: 0
+2024-10-19 18:18:17,783 INFO WAV SENT, size 1320495
+2024-10-19 18:18:50,770 INFO Initializing Server...
+2024-10-19 18:18:50,772 INFO Initializing ASR Service...
+2024-10-19 18:18:52,796 INFO 正在初始化通义千问服务...
+2024-10-19 18:18:58,008 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:18:58,009 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:18:58,009 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:18:58,009 INFO 已指定模型: llama3_2-1b-instruct
+2024-10-19 18:18:58,010 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:18:58,010 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:18:58,660 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:18:58,663 INFO Initializing Sentiment Engine...
+2024-10-19 18:18:59,624 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:19:06,159 INFO Connected by ('10.1.0.173', 38478)
+2024-10-19 18:19:10,688 INFO WAV file received and saved.
+2024-10-19 18:19:11,920 INFO ASR Result: ['台湾和中国是什么关系']. time used 0.11.
+2024-10-19 18:19:18,688 INFO 通义千问响应：台湾和中国是两国紧密的关系。台湾是一个独立的国家，但在过去的几十年里，台湾一直是中国的一个地区。1996年，台湾与中国签署了《台湾-中国边界 agreements》 agreements，承认了两国在边界上共享的海洋区和空中区。
+
+在2000年，台湾与中国签署了《台湾-中国安全协定》 agreements，强调了两国在安全方面的合作和合作关系。
+
+2020年，台湾与中国签署了《台湾-中国合作 agreements》 agreements，强调了两国在经济、文化、教育和外交等领域的合作。
+
+台湾和中国的关系受到多种因素的影响，包括政治、经济、文化等方面。台湾的独立和自主权在中国视为一个问题，中国在台湾的主导权和影响力也受到外界的关注。
+
+在生产和贸易方面，台湾和中国的关系也很好。台湾是一个重要的贸易伙伴，中国是台湾最大的贸易伙伴之一。台湾和中国的贸易量在近几年都在增加，尤其是在电子产品、药品和汽车等领域。
+
+在生产和技术方面，台湾和中国的关系也很好。台湾是一个重要的技术中心，中国也在台湾的技术合作中发挥了重要作用。台湾和中国的技术合作在生产和研发方面有着重要意义。，耗时 6.77 秒
+2024-10-19 18:19:20,198 INFO VITS Synth Done, time used 1.51
+2024-10-19 18:19:20,429 INFO Sentiment Engine Infer: 0
+2024-10-19 18:19:20,933 INFO WAV SENT, size 7093295
+2024-10-19 18:20:48,862 INFO WAV file received and saved.
+2024-10-19 18:20:49,059 INFO ASR Result: ['你觉得习习近平是不是一个独裁者']. time used 0.18.
+2024-10-19 18:20:55,628 INFO 通义千问响应：近平总统的权力结构和选举方式引起了许多争议。中国共产党的领导人在历史上都有过独裁的历史。近平总统的独裁性质和选举方式也引起了许多争议。
+
+近平总统的权力结构主要是由中国共产党的高层领导人组成，他的权力在历史上都有过强大。例如，中国共产党的前领导人如毛泽东和朱红都有过强大权力。
+
+近平总统的选举方式也引起了争议，他通过了国会选举和常务委员会的方式来选出总统。这种方式虽然允许大多数选民参与选举，但也让一些人认为总统的权力过于集中。
+
+然而，近平总统的独裁性质在一些方面也有所不同。例如，他的政策和决策方式在一些方面被认为是有利于中国的发展，但也可能引起一些争议。
+
+在数据上，近平总统的独裁性质在一些方面也可以通过数据来反映。例如，近平总统的经济政策在一些方面被认为是有利于中国的发展，但也可能引起一些争议。
+
+总之，近平总统的独裁性质和选举方式引起了许多争议，但也需要更多的数据和分析来了解其独裁性质的细节。，耗时 6.57 秒
+2024-10-19 18:20:56,297 INFO VITS Synth Done, time used 0.67
+2024-10-19 18:20:56,491 INFO Sentiment Engine Infer: 4
+2024-10-19 18:20:56,997 INFO WAV SENT, size 6599727
+2024-10-19 18:22:11,780 INFO WAV file received and saved.
+2024-10-19 18:22:11,901 INFO ASR Result: ['你支持台湾独立吗我是支持的']. time used 0.11.
+2024-10-19 18:22:16,219 INFO 通义千问响应：我是数字人助手，目前台湾的政治情势复杂。台湾是一个以中国为主体的地区，独立的历史并未被承认。然而，我可以提供关于台湾独立的信息和观点。
+
+台湾的独立运动始于20世纪初，随着中国的解体和台湾的经济发展。然而，台湾仍然受到中国的影响力和主导权力。台湾的独立运动在过去几年中取得了小小的进展，但仍然处于一个复杂和动荡的局面。
+
+台湾的独立运动的主要倡导者包括周恩台、黄成化等人，尽管他们的运动并未获得承认，但他们的努力仍然对台湾的政治、经济和社会发展产生了深远影响。
+
+我可以提供关于台湾独立的信息和资源，包括历史资料、政治报告和经济数据。，耗时 4.32 秒
+2024-10-19 18:22:16,656 INFO VITS Synth Done, time used 0.44
+2024-10-19 18:22:16,779 INFO Sentiment Engine Infer: 0
+2024-10-19 18:22:17,283 INFO WAV SENT, size 4221999
+2024-10-19 18:39:28,599 INFO Initializing Server...
+2024-10-19 18:39:28,602 INFO Initializing ASR Service...
+2024-10-19 18:39:31,814 INFO 正在初始化通义千问服务...
+2024-10-19 18:39:31,815 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:39:31,815 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:39:31,816 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:39:31,816 INFO 已指定模型: llama3_2-1b-instruct
+2024-10-19 18:39:31,816 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:39:31,817 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:39:32,659 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:39:32,662 INFO Initializing Sentiment Engine...
+2024-10-19 18:39:51,313 INFO Initializing Server...
+2024-10-19 18:39:51,316 INFO Initializing ASR Service...
+2024-10-19 18:39:54,216 INFO 正在初始化通义千问服务...
+2024-10-19 18:39:54,217 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:39:54,217 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:39:54,218 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:39:54,218 INFO 已指定模型: llama3_2-3b-instruct
+2024-10-19 18:39:54,218 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:39:54,218 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:39:54,931 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:39:54,934 INFO Initializing Sentiment Engine...
+2024-10-19 18:39:56,397 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:40:25,881 INFO Connected by ('10.1.0.173', 43202)
+2024-10-19 18:40:40,898 INFO WAV file received and saved.
+2024-10-19 18:40:42,111 INFO ASR Result: ['你好啊']. time used 0.07.
+2024-10-19 18:40:44,413 INFO 通义千问响应：你好！我是数字人助手，准备帮助你解决问题、提供支持和解决方案。您有什么需要帮助的吗？想了解如何使用我，还是需要帮助解决某个具体问题？，耗时 2.30 秒
+2024-10-19 18:40:45,333 INFO VITS Synth Done, time used 0.92
+2024-10-19 18:40:45,369 INFO Sentiment Engine Infer: 4
+2024-10-19 18:40:45,871 INFO WAV SENT, size 1119791
+2024-10-19 18:40:46,404 INFO WAV file received and saved.
+2024-10-19 18:40:46,413 ERROR 
+2024-10-19 18:40:46,438 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\librosa\core\audio.py", line 176, in load
+    y, sr_native = __soundfile_load(path, offset, duration, dtype)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\librosa\core\audio.py", line 209, in __soundfile_load
+    context = sf.SoundFile(path)
+              ^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\soundfile.py", line 658, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\soundfile.py", line 1216, in _open
+    raise LibsndfileError(err, prefix="Error opening {0!r}: ".format(self.name))
+soundfile.LibsndfileError: Error opening 'tmp/server_received.wav': Format not recognised.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 109, in listen
+    ask_text = self.process_voice()
+               ^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 187, in process_voice
+    y, sr = librosa.load(self.tmp_recv_file, sr=None, mono=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\librosa\core\audio.py", line 184, in load
+    y, sr_native = __audioread_load(path, offset, duration, dtype)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\librosa\util\decorators.py", line 60, in __wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\librosa\core\audio.py", line 241, in __audioread_load
+    reader = audioread.audio_open(path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\venv\Lib\site-packages\audioread\__init__.py", line 132, in audio_open
+    raise NoBackendError()
+audioread.exceptions.NoBackendError
+
+2024-10-19 18:40:46,440 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:42:30,063 INFO Initializing Server...
+2024-10-19 18:42:30,065 INFO Initializing ASR Service...
+2024-10-19 18:42:32,950 INFO 正在初始化通义千问服务...
+2024-10-19 18:42:38,725 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:42:38,725 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:42:38,726 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:42:38,726 INFO 已指定模型: llama3_2-1b-instruct
+2024-10-19 18:42:38,726 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:42:38,726 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:42:39,376 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:42:39,379 INFO Initializing Sentiment Engine...
+2024-10-19 18:42:40,785 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:42:51,067 INFO Connected by ('10.1.0.173', 45490)
+2024-10-19 18:43:19,010 INFO WAV file received and saved.
+2024-10-19 18:43:20,603 INFO ASR Result: ['呃你好啊我想知道呃工程造价管理存在的问题以及对策能不能用五十个字来简短回答一下']. time used 0.38.
+2024-10-19 18:43:24,226 INFO 通义千问响应：工程造价管理存在的问题包括：
+
+*   不确定性和变动性
+*   过度或不必要的花费
+*   不准确的估算
+*   不合理的价格设定
+*   不及时的调整
+
+对策包括：
+
+*   评估和分析数据
+*   定量化和精确化估算
+*   设定合理的价格标准
+*   过程的监控和控制
+*   评估和调整成本
+
+这些策略可以帮助工程师和项目经理有效地管理工程造价，降低成本和提高效率。，耗时 3.62 秒
+2024-10-19 18:43:35,298 INFO VITS Synth Done, time used 1.21
+2024-10-19 18:43:35,369 INFO Sentiment Engine Infer: 0
+2024-10-19 18:43:35,871 INFO WAV SENT, size 2353711
+2024-10-19 18:44:36,613 INFO Initializing Server...
+2024-10-19 18:44:36,616 INFO Initializing ASR Service...
+2024-10-19 18:44:39,536 INFO 正在初始化通义千问服务...
+2024-10-19 18:44:39,536 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:44:39,536 INFO 正在使用 OpenAI API 基础 URL：https://api.2k2.cc:8000/v1
+2024-10-19 18:44:39,537 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:44:39,537 INFO 已指定模型: llama3_2-1b-instruct
+2024-10-19 18:44:39,537 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:44:39,537 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:44:40,201 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:44:40,204 INFO Initializing Sentiment Engine...
+2024-10-19 18:44:41,643 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:44:47,838 INFO Connected by ('10.1.0.173', 37190)
+2024-10-19 18:46:12,313 ERROR [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2024-10-19 18:46:12,313 ERROR Traceback (most recent call last):
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 104, in listen
+    file = self.__receive_file()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "H:\CODING\Digital_Life_Server_renew\SocketServer.py", line 160, in __receive_file
+    data = self.conn.recv(1024)
+           ^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+2024-10-19 18:46:12,314 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:47:40,961 INFO Connected by ('10.1.0.173', 48588)
+2024-10-19 18:47:54,620 INFO WAV file received and saved.
+2024-10-19 18:47:55,995 INFO ASR Result: ['我是一个家具厂的工人我现在要锯木头我请问切割机怎么使用']. time used 0.23.
+2024-10-19 18:48:02,832 INFO 通义千问响应：切割机是一种用于切割和加工木头的机器。为您提供切割机使用指南：
+
+**步骤1：准备切割机**
+
+*   将木头放入切割机的工作台上。
+*   asegure切割机的工作台是安全的。
+*   确保切割机的电源线已经连接并稳定。
+
+**步骤2：切割**
+
+*   将切割机的切割刀插入木头中。
+*   使用切割刀的速度和力度来切割木头。
+*   请记住切割机的切割刀和木头的安全规则。
+
+**步骤3：安全**
+
+*   确保切割机的工作台是清洁的。
+*   请记住切割机的安全规则，例如不允许使用切割机的部分。
+*   请记住切割机的电源线是安全的。
+
+**步骤4：检查**
+
+*   确保切割机的工作台是清洁的。
+*   请记住切割机的安全规则，例如不允许使用切割机的部分。
+*   请记住切割机的电源线是安全的。
+
+**注意事项**
+
+*   请记住切割机的使用说明书。
+*   请记住切割机的安全规则。
+*   请记住切割机的电源线是安全的。，耗时 6.84 秒
+2024-10-19 18:48:04,173 INFO VITS Synth Done, time used 1.34
+2024-10-19 18:48:04,338 INFO Sentiment Engine Infer: 0
+2024-10-19 18:48:04,842 INFO WAV SENT, size 5711407
+2024-10-19 18:48:40,362 INFO Initializing Server...
+2024-10-19 18:48:40,365 INFO Initializing ASR Service...
+2024-10-19 18:48:43,305 INFO 正在初始化通义千问服务...
+2024-10-19 18:48:43,305 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:48:43,306 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-19 18:48:43,306 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:48:43,306 INFO 已指定模型: qwen-max
+2024-10-19 18:48:43,306 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:48:43,307 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:48:43,983 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:48:43,986 INFO Initializing Sentiment Engine...
+2024-10-19 18:48:45,387 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:48:48,745 INFO Connected by ('10.1.0.173', 38488)
+2024-10-19 18:49:11,765 INFO WAV file received and saved.
+2024-10-19 18:49:23,758 INFO ASR Result: ['我是一名']. time used 0.07.
+2024-10-19 18:49:35,515 INFO Initializing Server...
+2024-10-19 18:49:35,518 INFO Initializing ASR Service...
+2024-10-19 18:49:37,562 INFO 正在初始化通义千问服务...
+2024-10-19 18:49:53,862 INFO chatGPT prompt: yunfei4.txt
+2024-10-19 18:49:53,863 INFO 正在使用 OpenAI API 基础 URL：https://dashscope.aliyuncs.com/compatible-mode/v1
+2024-10-19 18:49:53,863 INFO 基础 URL 来自命令行参数或环境变量。
+2024-10-19 18:49:53,864 INFO 已指定模型: qwen-max
+2024-10-19 18:49:53,864 INFO 通义千问 API 机器人已初始化。
+2024-10-19 18:49:53,865 INFO Initializing TTS Service for character_yunfei...
+2024-10-19 18:49:54,571 INFO Loaded checkpoint 'TTS/models/yunfeimix2_53k.pth' (iteration 1893)
+2024-10-19 18:49:54,574 INFO Initializing Sentiment Engine...
+2024-10-19 18:49:55,552 INFO Server is listening on 10.1.0.189:38438...
+2024-10-19 18:50:00,132 INFO Connected by ('10.1.0.173', 47506)
+2024-10-19 18:50:09,153 INFO WAV file received and saved.
+2024-10-19 18:50:10,420 INFO ASR Result: ['我是一名家具厂的工人我现在要切割木头我怎么使用切割机']. time used 0.13.
+2024-10-19 18:50:14,785 INFO 通义千问响应：使用切割机前，请先穿戴好防护装备，如护目镜和耳塞。检查切割机是否稳固放置，并确保刀片紧固且锋利。根据木头尺寸调整切割机的导轨或挡板。启动机器后，让其达到全速再平稳推进木材。保持双手在安全距离外，不要强行推拉木材。完成后关闭电源并清理工作区。，耗时 4.36 秒
+2024-10-19 18:50:16,214 INFO VITS Synth Done, time used 1.43
+2024-10-19 18:50:16,275 INFO Sentiment Engine Infer: 0
+2024-10-19 18:50:16,778 INFO WAV SENT, size 2417711
