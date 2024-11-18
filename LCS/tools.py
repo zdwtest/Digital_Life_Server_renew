@@ -3,7 +3,6 @@ from langchain.agents import Tool
 from datetime import datetime
 from LCS.rag import RAGService
 from typing import Optional
-from pydantic import Field
 
 class KnowledgeBaseTool(BaseTool):
     name: str = "knowledge_base"
