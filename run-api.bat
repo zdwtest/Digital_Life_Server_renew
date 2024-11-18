@@ -9,4 +9,4 @@ set CHARACTER=yunfei
 set MODEL=gpt-3.5-turbo
 
 
-.\venv\Scripts\python.exe SocketServer.py  --baseUrl "https://dashscope.aliyuncs.com/compatible-mode/v1" --chatVer 3 --APIKey sk-0c8c295cb63e4cf2b1c46362cd23adf6 --stream False --character yunfei --model qwen-max
+.\venv\Scripts\python.exe SocketServer.py  --baseUrl "https://dashscope.aliyuncs.com/compatible-mode/v1" --chatVer 3 --APIKey sk-xxx --stream False --character yunfei --model qwen-max
